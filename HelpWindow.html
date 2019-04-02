@@ -78,7 +78,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 homework</p>
 </li>
 <li>
-<p><strong><code>add mc/CS2103T mn/Software Engineering hw/Tutorial 01 d/050319</code></strong> :
+<p><strong><code>add mc/CS2103T hw/Tutorial 01 d/05/03/2019</code></strong> :
 Adds a homework “Tutorial 01” under CS2103T tab with the deadline on 05 March 2019</p>
 </li>
 <li>
@@ -142,8 +142,7 @@ your homework based on your progress.</p>
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add mc/MODULECODE</code>, <code>MODULECODE</code> is a parameter which can be used as <code>add c/CS2103T</code>.</p>
 </li>
 <li>
-<p>All parameters must be supplied by users in this order:  <code>add mc/MODULECODE mn/MODULENAME hw/HOMEWORK d/DEADLINE</code>. Deadline format: DDMMYY
-*Items in square brackets are optional e.g.[p/PRIORITY], which is an optional field. Priority is set to low by default.</p>
+<p>All parameters must be supplied by users in this order:  <code>add mc/MODULECODE hw/HOMEWORK d/DEADLINE</code>. Deadline format: DD/MM/YYYY</p>
 </li>
 </ul>
 </div>
@@ -189,7 +188,7 @@ Format: <code>undo</code></p>
 <div class="paragraph">
 <p>Undoable commands: those commands that modify the UltiStudent&#8217;s content in
 the various manager e.g. for Homework Manager
-(<code>add-homework</code>, <code>delete-homework</code>, <code>edit-homework</code>).</p>
+(<code>add-hw</code>, <code>delete-hw</code>, <code>edit-hw</code>).</p>
 </div>
 </td>
 </tr>
@@ -201,23 +200,18 @@ the various manager e.g. for Homework Manager
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete-homework 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p><code>delete-hw 1</code><br>
+<code>undo</code> (reverses the <code>delete-hw 1</code> command)<br></p>
 </li>
 <li>
 <p><code>delete-note 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<code>undo</code> (reverses the <code>delete-note 1</code> command)<br></p>
 </li>
 <li>
-<p><code>select-homework 1</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>add mc/CS2101 mn/Effective Communication for Computing Professionals hw/Tutorial 1’<br>
+<p><code>delete-hw 1</code><br>
+<code>add mc/CS2101 hw/Tutorial 1’ d/03/03/2019+
 `undo</code> (reverses the <code>add</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<code>undo</code> (reverses the <code>delete-hw 1</code> command)<br></p>
 </li>
 </ul>
 </div>
@@ -235,8 +229,8 @@ Format: <code>redo</code></p>
 <ul>
 <li>
 <p><code>delete-hw 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<code>undo</code> (reverses the <code>delete-hw 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete-hw 1</code> command)<br></p>
 </li>
 <li>
 <p><code>delete-note 1</code><br>
@@ -264,10 +258,10 @@ There is no need to save manually.</p>
 <div class="sect2">
 <h3 id="homework-manager"><a class="link" href="#homework-manager">4.2. Homework Manager</a></h3>
 <div class="sect3">
-<h4 id="adding-a-homework-code-add-homework-code"><a class="link" href="#adding-a-homework-code-add-homework-code">4.2.1. Adding a homework: <code>add-homework</code></a></h4>
+<h4 id="adding-a-homework-code-add-hw-code"><a class="link" href="#adding-a-homework-code-add-hw-code">4.2.1. Adding a homework: <code>add-hw</code></a></h4>
 <div class="paragraph">
 <p>Adds a new homework task to the UltiStudent<br>
-Format: <code>add  mc/MODULECODE mn/MODULENAME hw/HOMEWORK d/DEADLINE [p/PRIORITY]</code></p>
+Format: <code>add  mc/MODULECODE hw/HOMEWORK d/DEADLINE</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -287,29 +281,22 @@ Priorities are low by default if not set, and acceptable values are low, normal,
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-homework mc/CS2103T mn/Software Engineering hw/User Guide Draft 1
-d/05032019</code></p>
+<p><code>add-hw mc/CS2103T hw/User Guide Draft 1
+d/05/03/2019</code></p>
 </li>
 <li>
-<p><code>add-homework mc/CS3230 mn/Data Structures and Algorithms II hw/Tutorial 3
-d/07032019 p/high</code></p>
+<p><code>add-hw mc/CS3230 hw/Tutorial 3
+d/07/03/2019</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-homework-code-list-homework-code"><a class="link" href="#listing-all-homework-code-list-homework-code">4.2.2. Listing all homework: <code>list-homework</code></a></h4>
-<div class="paragraph">
-<p>Shows a list of all homework in the UltiStudent.<br>
-Format: <code>list-homework</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-homework-code-edit-homework-code"><a class="link" href="#editing-a-homework-code-edit-homework-code">4.2.3. Editing a homework: <code>edit-homework</code></a></h4>
+<h4 id="editing-a-homework-code-edit-hw-code"><a class="link" href="#editing-a-homework-code-edit-hw-code">4.2.2. Editing a homework: <code>edit-hw</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing homework entry in the UltiStudent<br>
-Format: <code>edit-homework INDEX  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK]
-[d/DEADLINE] [p/PRIORITY]</code></p>
+Format: <code>edit-homework INDEX  [mc/MODULECODE] [hw/HOMEWORK]
+[d/DEADLINE]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -334,66 +321,21 @@ Format: <code>edit-homework INDEX  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK]
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit-homework 1 p/high d/100319</code><br>
-Edits the priority and deadline of the 1st homework to be <code>high</code> and <code>10 March 2019</code></p>
+<p><code>edit-homework 1 d/10/03/2019</code><br>
+Edits the deadline of the 1st homework to be <code>10 March 2019</code></p>
 </li>
 <li>
-<p><code>edit-homework 2 d/030319 p/</code><br>
-Edits the deadline of the 2nd homework and set the priority to low</p>
+<p><code>edit-homework 2 hw/Tutorial 1 d/03/03/2019<br>
+Edits the deadline of the 2nd homework and set the name of the homework to be `Tutorial 1</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-homework-by-keywords-in-code-hw-homework-code-parameter-code-find-code"><a class="link" href="#locating-homework-by-keywords-in-code-hw-homework-code-parameter-code-find-code">4.2.4. Locating homework by keywords in <code>hw/HOMEWORK</code> parameter: <code>find</code></a></h4>
-<div class="paragraph">
-<p>Finds homework whose homework name contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is not case sensitive. e.g <code>tutorial</code> will match <code>Tutorial</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>Lecture 3</code> will match <code>3 Lecture</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Tutorial</code> will not match <code>Tutorials</code></p>
-</li>
-<li>
-<p>Homework matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Tutorial</code> will return <code>Tutorial 3</code>, <code>Create Tutorial Solutions</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find Draft</code><br>
-Returns <code>Presentation Script Draft</code> and <code>User Guide Draft</code></p>
-</li>
-<li>
-<p><code>find Tutorial Lecture Submission</code><br>
-Returns any homework having names <code>Tutorial</code>, <code>Lecture</code>, or <code>Submission</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-homework-code-delete-code"><a class="link" href="#deleting-a-homework-code-delete-code">4.2.5. Deleting a homework: <code>delete</code></a></h4>
+<h4 id="deleting-a-homework-code-delete-hw-code"><a class="link" href="#deleting-a-homework-code-delete-hw-code">4.2.3. Deleting a homework: <code>delete-hw</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified homework from the UltiStudent.<br>
-Format: <code>delete-homework INDEX</code></p>
+Format: <code>delete-hw INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -423,55 +365,12 @@ Format: <code>delete-homework INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete-homework 2</code><br>
+<p><code>delete-hw 2</code><br>
 Deletes the 2nd homework in the UltiStudent.</p>
 </li>
 <li>
-<p><code>find Tutorial</code><br>
-<code>delete-homework 1</code><br>
-Deletes the 1st homework in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="selecting-a-homework-code-select-code"><a class="link" href="#selecting-a-homework-code-select-code">4.2.6. Selecting a homework: <code>select</code></a></h4>
-<div class="paragraph">
-<p>Selects the homework identified by the index number used in the displayed homework list.<br>
-Format: <code>select INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Selects the homework and loads the homework details at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed homework list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>select-homework 2</code><br>
-Selects the 2nd homework in the UltiStudent.</p>
-</li>
-<li>
-<p><code>find Tutorial</code><br>
-<code>select-homework 1</code><br>
-Selects the 1st homework in the results of the <code>find</code> command.</p>
+<p><code>delete-hw 1</code><br>
+Deletes the 1st homework in UltiStudent.</p>
 </li>
 </ul>
 </div>
@@ -784,4 +683,4 @@ e.g.<code>select 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 09:50:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 10:58:42 UTC</div></div></div></body></html>
