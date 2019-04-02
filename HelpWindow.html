@@ -151,18 +151,18 @@ your homework based on your progress.</p>
 <div class="sect2">
 <h3 id="general-commands"><a class="link" href="#general-commands">4.1. General Commands</a></h3>
 <div class="paragraph">
-<p>The commands here are applicable in UltiStudent&#8217;s 3 Managers (Homework
-Manager, NotesManager, CapManager).</p>
+<p>The commands here are applicable in UltiStudent&#8217;s 3 Managers<br>
+HomeworkManager, NotesManager, CapManager.</p>
 </div>
 <div class="paragraph">
 <p>The commands differ by the entity placed at the end of each command.
 <code>add-xx</code>, <code>delete-xx</code>, <code>edit-xx</code> where xx should be replaced by either
-"homework", "note", or "cap".</p>
+"hw" for homework, "note", or "cap".</p>
 </div>
 <div class="sect3">
 <h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.1.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
-<p>Opens up the help window.
+<p>Opens up the help window.<br>
 Format: <code>help</code></p>
 </div>
 </div>
@@ -209,8 +209,8 @@ the various manager e.g. for Homework Manager
 </li>
 <li>
 <p><code>delete-hw 1</code><br>
-<code>add mc/CS2101 hw/Tutorial 1’ d/03/03/2019+
-`undo</code> (reverses the <code>add</code> command)<br>
+<code>add mc/CS2101 hw/Tutorial 1 d/03/03/2019</code><br>
+<code>undo</code> (reverses the <code>add</code> command)<br>
 <code>undo</code> (reverses the <code>delete-hw 1</code> command)<br></p>
 </li>
 </ul>
@@ -352,11 +352,6 @@ Format: <code>delete-hw INDEX</code></p>
 </li>
 </ul>
 </div>
-<div class="exampleblock">
-<div class="content">
-
-</div>
-</div>
 </div>
 </div>
 <div class="paragraph">
@@ -390,20 +385,20 @@ Format: <code>add-note mc/MODULECODE nn/NOTENAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-note mc/CS2103T nn/NOTENAME</code></p>
+<p><code>add-note mc/CS2103T n/NOTENAME</code></p>
 </li>
 <li>
-<p><code>add-note mc/CS2100 nn/NOTENAME</code></p>
+<p><code>add-note mc/CS2100 n/NOTENAME</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-note-code-edit-note-code"><a class="link" href="#editing-a-note-code-edit-note-code">4.3.2. Editing a note : <code>edit-note</code></a></h4>
+<h4 id="editing-a-note-code-selectnote-code"><a class="link" href="#editing-a-note-code-selectnote-code">4.3.2. Editing a note : <code>selectNote</code></a></h4>
 <div class="paragraph">
 <p>Opens and allows editing on an existing note in the Notes Manager based on its
 index<br>
-Format: <code>edit-note INDEX</code></p>
+Format: <code>selectNote INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -411,16 +406,37 @@ Format: <code>edit-note INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit-note 1</code></p>
+<p><code>selectNote 1</code></p>
 </li>
 <li>
-<p><code>edit-note 2</code></p>
+<p><code>selectNote 2</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-note-code-delete-note-code"><a class="link" href="#deleting-a-note-code-delete-note-code">4.3.3. Deleting a Note: <code>delete-note</code></a></h4>
+<h4 id="editing-a-note-code-savenote-code"><a class="link" href="#editing-a-note-code-savenote-code">4.3.3. Editing a note : <code>saveNote</code></a></h4>
+<div class="paragraph">
+<p>Saves and closes the current note in editing in the Notes Manager based on its
+index<br>
+Format: <code>saveNote INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>saveNote 1</code></p>
+</li>
+<li>
+<p><code>saveNote 2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-note-code-delete-note-code"><a class="link" href="#deleting-a-note-code-delete-note-code">4.3.4. Deleting a Note: <code>delete-note</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified note from the Notes Manager.<br>
 Format: <code>delete-note INDEX</code></p>
@@ -439,11 +455,6 @@ Format: <code>delete-note INDEX</code></p>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 </ul>
-</div>
-<div class="exampleblock">
-<div class="content">
-
-</div>
 </div>
 </div>
 </div>
@@ -470,19 +481,7 @@ Deletes the 2nd note in the Note Manager.</p>
 <h4 id="adding-a-cap-entry-code-add-cap-code"><a class="link" href="#adding-a-cap-entry-code-add-cap-code">4.4.1. Adding a CAP entry: <code>add-cap</code></a></h4>
 <div class="paragraph">
 <p>Adds a new CAP entry to the CAP Manager<br>
-Format: <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS [t/tag]</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Tags can be used to indicate which year and semester was the module taken.
-</td>
-</tr>
-</table>
+Format: <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS sem/MODULESEMESTER</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -490,23 +489,16 @@ Tags can be used to indicate which year and semester was the module taken.
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-cap mc/CS2103T g/A mcs/4 tag/Y2S2</code></p>
+<p><code>add-cap mc/CS2103T g/A mcs/4 sem/Y2S2</code></p>
 </li>
 <li>
-<p><code>add-cap mc/CS2100 g/A+ mcs/4 tag/Y2S1</code></p>
+<p><code>add-cap mc/CS2100 g/A+ mcs/4 sem/Y2S1</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-cap-entries-code-list-cap-code"><a class="link" href="#listing-all-cap-entries-code-list-cap-code">4.4.2. Listing all CAP Entries: <code>list-cap</code></a></h4>
-<div class="paragraph">
-<p>Shows a list of all CAP entries in the CAP Manager.<br>
-Format: <code>list-cap</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-cap-entry-code-delete-cap-code"><a class="link" href="#deleting-a-cap-entry-code-delete-cap-code">4.4.3. Deleting a CAP entry: <code>delete-cap</code></a></h4>
+<h4 id="deleting-a-cap-entry-code-delete-cap-code"><a class="link" href="#deleting-a-cap-entry-code-delete-cap-code">4.4.2. Deleting a CAP entry: <code>delete-cap</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified CAP entry from the CAP Manager.<br>
 Format: <code>delete-cap INDEX</code></p>
@@ -526,11 +518,6 @@ Format: <code>delete-cap INDEX</code></p>
 </li>
 </ul>
 </div>
-<div class="exampleblock">
-<div class="content">
-
-</div>
-</div>
 </div>
 </div>
 <div class="paragraph">
@@ -539,18 +526,17 @@ Format: <code>delete-cap INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list-cap</code><br>
-<code>delete-cap 2</code><br>
+<p><code>delete-cap 2</code><br>
 Deletes the 2nd CAP Entry in the UltiStudent.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-cap-entry-code-edit-cap-code"><a class="link" href="#editing-a-cap-entry-code-edit-cap-code">4.4.4. Editing a CAP Entry: <code>edit-cap</code></a></h4>
+<h4 id="editing-a-cap-entry-by-index-code-edit-cap-code"><a class="link" href="#editing-a-cap-entry-by-index-code-edit-cap-code">4.4.3. Editing a CAP Entry by index: <code>edit-cap</code></a></h4>
 <div class="paragraph">
-<p>Edits an existing homework entry in the UltiStudent<br>
-Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [t/TAG]</code></p>
+<p>Edits an existing cap entry in the UltiStudent by the use of index.<br>
+Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -576,34 +562,27 @@ Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS
 <ul>
 <li>
 <p><code>edit-cap 1 g/A</code><br>
-Edits the module grade of the 1st module in CAP manager to be <code>A</code></p>
+Edits the module grade of the 1st cap entry in cap manager to be <code>A</code></p>
 </li>
 <li>
 <p><code>edit-cap 3 mc/CS2102 g/B+</code><br>
-Edits the module code of the 3rd homework and the grade the student got to <code>B+</code>.</p>
+Edits the module code of the 3rd cap entry and the grade obtained to <code>B+</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="calculating-your-cap-code-calculatecap-code"><a class="link" href="#calculating-your-cap-code-calculatecap-code">4.4.5. Calculating your CAP : <code>calculateCAP</code></a></h4>
+<h4 id="editing-a-cap-entry-by-module-code-code-edit-cap-mc-code"><a class="link" href="#editing-a-cap-entry-by-module-code-code-edit-cap-mc-code">4.4.4. Editing a CAP Entry by module code: <code>edit-cap-mc</code></a></h4>
 <div class="paragraph">
-<p>Calculates your current CAP based on the CAP entries in CAP Manager<br>
-Format: <code>calculateCAP</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="indicating-that-you-wish-to-su-a-module-code-su-code"><a class="link" href="#indicating-that-you-wish-to-su-a-module-code-su-code">4.4.6. Indicating that you wish to SU a module: <code>SU</code></a></h4>
-<div class="paragraph">
-<p>SUs the CAP Entry<br>
-Format: <code>SU INDEX</code></p>
+<p>Edits an existing cap entry in the UltiStudent by the use of module code.<br>
+Format: <code>edit-cap-mc MODULECODE [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>SUs the CAP entry at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed CAP Entries list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Edits the CAP entry with the specified MODULECODE. The module code <strong>must</strong> be valid.</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -621,11 +600,21 @@ Format: <code>SU INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>listCapEntry</code><br>
-<code>SU 1</code><br>
-Edits the module grade of the 1st module in CAP manager to be <code>S</code> or <code>U</code>.</p>
+<p><code>edit-cap-mc CS2100 g/B-</code><br>
+Edits the module grade of CS2100 in cap manager to be <code>B-</code></p>
+</li>
+<li>
+<p><code>edit-cap CS2103T mc/CS2102 g/A+</code><br>
+Edits the cap entry of CS2103T to become that of a cap entry for CS2102 and sets the grade obtained to <code>B+</code>.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calculating-your-cap"><a class="link" href="#calculating-your-cap">4.4.5. Calculating your CAP :</a></h4>
+<div class="paragraph">
+<p>CapManager automatically calculates your CAP score with every command that relates to it. You can view your CAP in the Cap Manager window.
+Format: -</p>
 </div>
 </div>
 </div>
@@ -646,23 +635,52 @@ Edits the module grade of the 1st module in CAP manager to be <code>S</code> or 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add mc/MODULECODE mn/MODULENAME hw/HOMEWORK [p/PRIORITY]&#8230;&#8203;</code><br>
-e.g. <code>add mc/CS2103T mn/Software Engineering hw/Tutorial 3 p/high</code></p>
+<p><strong>Add Homework</strong> <code>add-hw mc/MODULECODE hw/HOMEWORK d/DEADLINE [p/PRIORITY]&#8230;&#8203;</code><br>
+e.g. <code>add-hw mc/CS2103T hw/Tutorial 3 p/high</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
+<p><strong>Delete Homework</strong> : <code>delete INDEX</code><br>
 e.g. <code>delete 2</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK] [d/DEADLINE] [p/PRIORITY]&#8230;&#8203;</code><br>
+<p><strong>Edit Homework</strong> : <code>edit-note INDEX  [mc/MODULECODE] [hw/HOMEWORK] [d/DEADLINE] [p/PRIORITY]&#8230;&#8203;</code><br>
 e.g. <code>edit 2 d/030319 p/</code></p>
+</li>
+<li>
+<p><strong>Add Note</strong> <code>add-note mc/MODULECODE n/NOTENAME hw/HOMEWORK [p/PRIORITY]&#8230;&#8203;</code><br>
+e.g. <code>add-note mc/CS2103T n/Lecture  3</code></p>
+</li>
+<li>
+<p><strong>Delete Note</strong> : <code>delete-note INDEX</code><br>
+e.g. <code>delete 2</code></p>
+</li>
+<li>
+<p><strong>Selecting Note to Edit</strong> : <code>selectNote INDEX</code><br>
+e.g. <code>selectNote 2</code></p>
+</li>
+<li>
+<p><strong>Saving an Edited Note</strong> : <code>saveNote INDEX</code><br>
+e.g. <code>saveNote 5</code></p>
+</li>
+<li>
+<p><strong>Add Cap Entry</strong> <code>add-cap mc/MODULECODE nn/NOTENAME hw/HOMEWORK [p/PRIORITY]&#8230;&#8203;</code><br>
+e.g. `add-cap mc/CS2101 g/A- mcs/4 sem/Y2S2 `</p>
+</li>
+<li>
+<p><strong>Delete Cap Entry</strong> : <code>delete-note INDEX</code><br>
+e.g. <code>delete 1</code></p>
+</li>
+<li>
+<p><strong>Edit Cap Entry by Index</strong> : <code>edit-note INDEX  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK] [d/DEADLINE] [p/PRIORITY]&#8230;&#8203;</code><br>
+e.g. <code>edit-cap 2 g/B+ mcs/4</code></p>
+</li>
+<li>
+<p><strong>Edit Cap Entry by Code</strong> : <code>edit-note MODULECODE  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK] [d/DEADLINE] [p/PRIORITY]&#8230;&#8203;</code><br>
+e.g. <code>edit-cap-mc CS3203 g/A- mcs/8</code></p>
 </li>
 <li>
 <p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
 e.g. <code>find Tutorial 3</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -683,4 +701,4 @@ e.g.<code>select 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 11:55:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 13:16:52 UTC</div></div></div></body></html>
