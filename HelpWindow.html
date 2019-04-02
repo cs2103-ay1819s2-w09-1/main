@@ -15,7 +15,7 @@
 <ul class="sectlevel2">
 <li><a href="#homeworkmanager">3.1. HomeworkManager</a></li>
 <li><a href="#notesmanager">3.2. NotesManager</a></li>
-<li><a href="#capmanager">3.3. CapManager</a></li>
+<li><a href="#capmanager">3.3. CAPManager</a></li>
 </ul>
 </li>
 <li><a href="#Commands">4. Commands</a>
@@ -35,7 +35,11 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>UltiStudent is for students who <strong>prefer to use a desktop app for managing their school activities</strong>. More importantly, it is <strong>optimized for students who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, it can not only help you to manage your homework but also serve as a timetable, CAP calculator and Notes keeping! Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>UltiStudent is for students who <strong>prefer to use a desktop app for managing their school activities</strong>.
+More importantly, it is <strong>optimized for students who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
+If you can type fast, it can not only help you to manage your homework but
+also serve as a CAP calculator and Notes keeper!
+Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -70,14 +74,15 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all  homework</p>
+<p><strong><code>open HomeworkManager</code></strong> : Opens the Homework Manager and its existing
+homework</p>
 </li>
 <li>
 <p><strong><code>add mc/CS2103T mn/Software Engineering hw/Tutorial 01 d/050319</code></strong> :
 Adds a homework “Tutorial 01” under CS2103T tab with the deadline on 05 March 2019</p>
 </li>
 <li>
-<p><strong><code>delete 3</code></strong> : deletes the 3rd  homework shown in the current list</p>
+<p><strong><code>delete 3</code></strong> : deletes the 3rd  item shown in the current manager</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -96,22 +101,24 @@ Adds a homework “Tutorial 01” under CS2103T tab with the deadline on 05 Marc
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>UltiStudent consists of 3 key features to help you manage your student life: HomeworkManager, NotesManager, CapManager.</p>
+<p>UltiStudent consists of 3 key features to help you manage your student life:
+Homework Manager, Notes Manager, CAP Manager.</p>
 </div>
 <div class="sect2">
 <h3 id="homeworkmanager"><a class="link" href="#homeworkmanager">3.1. HomeworkManager</a></h3>
 <div class="paragraph">
-<p>You can record and manage your homework here by adding, deleting, editing your progress.</p>
+<p>You can record and manage your homework here by adding, deleting, editing
+your homework based on your progress.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="notesmanager"><a class="link" href="#notesmanager">3.2. NotesManager</a></h3>
 <div class="paragraph">
-<p>You can record and manage your notes here.</p>
+<p>You can add, delete, and edit your notes here.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="capmanager"><a class="link" href="#capmanager">3.3. CapManager</a></h3>
+<h3 id="capmanager"><a class="link" href="#capmanager">3.3. CAPManager</a></h3>
 <div class="paragraph">
 <p>You can record and keep track of your Cumulative Aggregate Points (CAP) here by adding, deleting the grades you have received for modules you have taken and also project your expected CAP.</p>
 </div>
@@ -145,7 +152,13 @@ Adds a homework “Tutorial 01” under CS2103T tab with the deadline on 05 Marc
 <div class="sect2">
 <h3 id="general-commands"><a class="link" href="#general-commands">4.1. General Commands</a></h3>
 <div class="paragraph">
-<p>The commands here are applicable throughout UltiStudent.</p>
+<p>The commands here are applicable in UltiStudent&#8217;s 3 Managers (Homework
+Manager, NotesManager, CapManager).</p>
+</div>
+<div class="paragraph">
+<p>The commands differ by the entity placed at the end of each command.
+<code>add-xx</code>, <code>delete-xx</code>, <code>edit-xx</code> where xx should be replaced by either
+"homework", "note", or "cap".</p>
 </div>
 <div class="sect3">
 <h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.1.1. Viewing help : <code>help</code></a></h4>
@@ -174,7 +187,9 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the UltiStudent&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code>).</p>
+<p>Undoable commands: those commands that modify the UltiStudent&#8217;s content in
+the various manager e.g. for Homework Manager
+(<code>add-homework</code>, <code>delete-homework</code>, <code>edit-homework</code>).</p>
 </div>
 </td>
 </tr>
@@ -186,13 +201,15 @@ Format: <code>undo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
+<p><code>delete-homework 1</code><br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
 </li>
 <li>
-<p><code>select 1</code><br>
-<code>list</code><br>
+<p><code>delete-note 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select-homework 1</code><br>
 <code>undo</code><br>
 The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
 </li>
@@ -217,12 +234,12 @@ Format: <code>redo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete-hw 1</code><br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br>
 <code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete-note 1</code><br>
 <code>redo</code><br>
 The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
 </li>
@@ -247,7 +264,7 @@ There is no need to save manually.</p>
 <div class="sect2">
 <h3 id="homework-manager"><a class="link" href="#homework-manager">4.2. Homework Manager</a></h3>
 <div class="sect3">
-<h4 id="adding-a-homework-code-add-code"><a class="link" href="#adding-a-homework-code-add-code">4.2.1. Adding a homework: <code>add</code></a></h4>
+<h4 id="adding-a-homework-code-add-homework-code"><a class="link" href="#adding-a-homework-code-add-homework-code">4.2.1. Adding a homework: <code>add-homework</code></a></h4>
 <div class="paragraph">
 <p>Adds a new homework task to the UltiStudent<br>
 Format: <code>add  mc/MODULECODE mn/MODULENAME hw/HOMEWORK d/DEADLINE [p/PRIORITY]</code></p>
@@ -270,26 +287,29 @@ Priorities are low by default if not set, and acceptable values are low, normal,
 <div class="ulist">
 <ul>
 <li>
-<p><code>add mc/CS2103T mn/Software Engineering hw/User Guide Draft 1 d/05032019</code></p>
+<p><code>add-homework mc/CS2103T mn/Software Engineering hw/User Guide Draft 1
+d/05032019</code></p>
 </li>
 <li>
-<p><code>add mc/CS3230 mn/Data Structures and Algorithms II hw/Tutorial 3 d/07032019 p/high</code></p>
+<p><code>add-homework mc/CS3230 mn/Data Structures and Algorithms II hw/Tutorial 3
+d/07032019 p/high</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-homework-code-list-code"><a class="link" href="#listing-all-homework-code-list-code">4.2.2. Listing all homework: <code>list</code></a></h4>
+<h4 id="listing-all-homework-code-list-homework-code"><a class="link" href="#listing-all-homework-code-list-homework-code">4.2.2. Listing all homework: <code>list-homework</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all homework in the UltiStudent.<br>
-Format: <code>list</code></p>
+Format: <code>list-homework</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-homework-code-edit-code"><a class="link" href="#editing-a-homework-code-edit-code">4.2.3. Editing a homework: <code>edit</code></a></h4>
+<h4 id="editing-a-homework-code-edit-homework-code"><a class="link" href="#editing-a-homework-code-edit-homework-code">4.2.3. Editing a homework: <code>edit-homework</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing homework entry in the UltiStudent<br>
-Format: <code>edit INDEX  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK] [d/DEADLINE] [p/PRIORITY]</code></p>
+Format: <code>edit-homework INDEX  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK]
+[d/DEADLINE] [p/PRIORITY]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -314,11 +334,11 @@ Format: <code>edit INDEX  [mc/MODULECODE] [mn/MODULENAME] [hw/HOMEWORK] [d/DEADL
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/high d/100319</code><br>
+<p><code>edit-homework 1 p/high d/100319</code><br>
 Edits the priority and deadline of the 1st homework to be <code>high</code> and <code>10 March 2019</code></p>
 </li>
 <li>
-<p><code>edit 2 d/030319 p/</code><br>
+<p><code>edit-homework 2 d/030319 p/</code><br>
 Edits the deadline of the 2nd homework and set the priority to low</p>
 </li>
 </ul>
@@ -373,7 +393,7 @@ Returns any homework having names <code>Tutorial</code>, <code>Lecture</code>, o
 <h4 id="deleting-a-homework-code-delete-code"><a class="link" href="#deleting-a-homework-code-delete-code">4.2.5. Deleting a homework: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified homework from the UltiStudent.<br>
-Format: <code>delete INDEX</code></p>
+Format: <code>delete-homework INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -404,12 +424,12 @@ Format: <code>delete INDEX</code></p>
 <ul>
 <li>
 <p><code>list</code><br>
-<code>delete 2</code><br>
+<code>delete-homework 2</code><br>
 Deletes the 2nd homework in the UltiStudent.</p>
 </li>
 <li>
 <p><code>find Tutorial</code><br>
-<code>delete 1</code><br>
+<code>delete-homework 1</code><br>
 Deletes the 1st homework in the results of the <code>find</code> command.</p>
 </li>
 </ul>
@@ -445,12 +465,12 @@ Format: <code>select INDEX</code></p>
 <ul>
 <li>
 <p><code>list</code><br>
-<code>select 2</code><br>
+<code>select-homework 2</code><br>
 Selects the 2nd homework in the UltiStudent.</p>
 </li>
 <li>
 <p><code>find Tutorial</code><br>
-<code>select 1</code><br>
+<code>select-homework 1</code><br>
 Selects the 1st homework in the results of the <code>find</code> command.</p>
 </li>
 </ul>
@@ -460,22 +480,10 @@ Selects the 1st homework in the results of the <code>find</code> command.</p>
 <div class="sect2">
 <h3 id="notes-manager"><a class="link" href="#notes-manager">4.3. Notes Manager</a></h3>
 <div class="sect3">
-<h4 id="adding-a-note-code-addnote-code"><a class="link" href="#adding-a-note-code-addnote-code">4.3.1. Adding a note : <code>addNote</code></a></h4>
+<h4 id="adding-a-note-code-add-note-code"><a class="link" href="#adding-a-note-code-add-note-code">4.3.1. Adding a note : <code>add-note</code></a></h4>
 <div class="paragraph">
 <p>Adds a new note to the Notes Manager<br>
-Format: <code>addNote mc/MODULECODE nn/NOTENAME</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Tags can be used to indicate which year and semester was the module taken.
-</td>
-</tr>
-</table>
+Format: <code>add-note mc/MODULECODE nn/NOTENAME</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -483,20 +491,20 @@ Tags can be used to indicate which year and semester was the module taken.
 <div class="ulist">
 <ul>
 <li>
-<p><code>add mc/CS2103T nn/NOTENAME tag/Y2S2</code></p>
+<p><code>add-note mc/CS2103T nn/NOTENAME</code></p>
 </li>
 <li>
-<p><code>add mc/CS2100 nn/NOTENAME tag/Y2S1</code></p>
+<p><code>add-note mc/CS2100 nn/NOTENAME</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-note-code-editnote-code"><a class="link" href="#editing-a-note-code-editnote-code">4.3.2. Editing a note : <code>editNote</code></a></h4>
+<h4 id="editing-a-note-code-edit-note-code"><a class="link" href="#editing-a-note-code-edit-note-code">4.3.2. Editing a note : <code>edit-note</code></a></h4>
 <div class="paragraph">
 <p>Opens and allows editing on an existing note in the Notes Manager based on its
 index<br>
-Format: <code>editNote INDEX</code></p>
+Format: <code>edit-note INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -504,26 +512,19 @@ Format: <code>editNote INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>editNOTE 1</code></p>
+<p><code>edit-note 1</code></p>
 </li>
 <li>
-<p><code>editNOTE 2</code></p>
+<p><code>edit-note 2</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-notes-code-listnotes-code"><a class="link" href="#listing-all-notes-code-listnotes-code">4.3.3. Listing all Notes: <code>listNotes</code></a></h4>
-<div class="paragraph">
-<p>Shows a list of all the notes in the Notes Manager.<br>
-Format: <code>listNotes</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-note-code-deletenote-code"><a class="link" href="#deleting-a-note-code-deletenote-code">4.3.4. Deleting a Note: <code>deleteNote</code></a></h4>
+<h4 id="deleting-a-note-code-delete-note-code"><a class="link" href="#deleting-a-note-code-delete-note-code">4.3.3. Deleting a Note: <code>delete-note</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified note from the Notes Manager.<br>
-Format: <code>deleteNote INDEX</code></p>
+Format: <code>delete-note INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -553,13 +554,11 @@ Format: <code>deleteNote INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>listNotes</code><br>
-<code>editNote 1</code><br>
+<p><code>edit-note 1</code><br>
 Opens the 1st note in the Note Manager and allows editing into the note.</p>
 </li>
 <li>
-<p><code>listNotes</code><br>
-<code>delete 2</code><br>
+<p><code>delete-note 2</code><br>
 Deletes the 2nd note in the Note Manager.</p>
 </li>
 </ul>
@@ -569,10 +568,10 @@ Deletes the 2nd note in the Note Manager.</p>
 <div class="sect2">
 <h3 id="cap-manager"><a class="link" href="#cap-manager">4.4. CAP Manager</a></h3>
 <div class="sect3">
-<h4 id="adding-a-cap-entry-code-addcapentry-code"><a class="link" href="#adding-a-cap-entry-code-addcapentry-code">4.4.1. Adding a CAP entry: <code>addCAPEntry</code></a></h4>
+<h4 id="adding-a-cap-entry-code-add-cap-code"><a class="link" href="#adding-a-cap-entry-code-add-cap-code">4.4.1. Adding a CAP entry: <code>add-cap</code></a></h4>
 <div class="paragraph">
 <p>Adds a new CAP entry to the CAP Manager<br>
-Format: <code>addCapEntry  mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS [t/tag]</code></p>
+Format: <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS [t/tag]</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -592,26 +591,26 @@ Tags can be used to indicate which year and semester was the module taken.
 <div class="ulist">
 <ul>
 <li>
-<p><code>add mc/CS2103T g/A mcs/4 tag/Y2S2</code></p>
+<p><code>add-cap mc/CS2103T g/A mcs/4 tag/Y2S2</code></p>
 </li>
 <li>
-<p><code>add mc/CS2100 g/A+ mcs/4 tag/Y2S1</code></p>
+<p><code>add-cap mc/CS2100 g/A+ mcs/4 tag/Y2S1</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-cap-entries-code-listcapentry-code"><a class="link" href="#listing-all-cap-entries-code-listcapentry-code">4.4.2. Listing all CAP Entries: <code>listCapEntry</code></a></h4>
+<h4 id="listing-all-cap-entries-code-list-cap-code"><a class="link" href="#listing-all-cap-entries-code-list-cap-code">4.4.2. Listing all CAP Entries: <code>list-cap</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all CAP entries in the CAP Manager.<br>
-Format: <code>listCapEntry</code></p>
+Format: <code>list-cap</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-cap-entry-code-deletecapentry-code"><a class="link" href="#deleting-a-cap-entry-code-deletecapentry-code">4.4.3. Deleting a CAP entry: <code>deleteCAPEntry</code></a></h4>
+<h4 id="deleting-a-cap-entry-code-delete-cap-code"><a class="link" href="#deleting-a-cap-entry-code-delete-cap-code">4.4.3. Deleting a CAP entry: <code>delete-cap</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified CAP entry from the CAP Manager.<br>
-Format: <code>deleteCapEntry INDEX</code></p>
+Format: <code>delete-cap INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -641,18 +640,18 @@ Format: <code>deleteCapEntry INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>listCapEntry</code><br>
-<code>delete 2</code><br>
+<p><code>list-cap</code><br>
+<code>delete-cap 2</code><br>
 Deletes the 2nd CAP Entry in the UltiStudent.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-cap-entry-code-editcapentry-code"><a class="link" href="#editing-a-cap-entry-code-editcapentry-code">4.4.4. Editing a CAP Entry: <code>editCapEntry</code></a></h4>
+<h4 id="editing-a-cap-entry-code-edit-cap-code"><a class="link" href="#editing-a-cap-entry-code-edit-cap-code">4.4.4. Editing a CAP Entry: <code>edit-cap</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing homework entry in the UltiStudent<br>
-Format: <code>edit INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [t/TAG]</code></p>
+Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [t/TAG]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -677,11 +676,11 @@ Format: <code>edit INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [t
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 g/A</code><br>
+<p><code>edit-cap 1 g/A</code><br>
 Edits the module grade of the 1st module in CAP manager to be <code>A</code></p>
 </li>
 <li>
-<p><code>edit 3 mc/CS2102 g/B+</code><br>
+<p><code>edit-cap 3 mc/CS2102 g/B+</code><br>
 Edits the module code of the 3rd homework and the grade the student got to <code>B+</code>.</p>
 </li>
 </ul>
@@ -785,4 +784,4 @@ e.g.<code>select 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-01 16:04:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 04:39:54 UTC</div></div></div></body></html>
