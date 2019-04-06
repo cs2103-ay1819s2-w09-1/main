@@ -35,11 +35,21 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>UltiStudent is for students who <strong>prefer to use a desktop app for managing their school activities</strong>.
-More importantly, it is <strong>optimized for students who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
-If you can type fast, it can not only help you to manage your homework but
-also serve as a CAP calculator and Notes keeper!
-Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>UltiStudent is a student application that effectively tackles the problem of having
+too many applications to manage their school life by providing a centralised platform
+for them to manage their homework, cumulative average point and notes.</p>
+</div>
+<div class="paragraph">
+<p>UltiStudent is catered for students who prefer to use a desktop app for managing their
+school activities through a Command Line Interface (CLI) while still having the benefits
+of a Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>Therefore if you can type fast, why not give UltiStudent a try to speed up your
+management of school activities!</p>
+</div>
+<div class="paragraph">
+<p>Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -78,11 +88,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 homework</p>
 </li>
 <li>
-<p><strong><code>add mc/CS2103T hw/Tutorial 01 d/05/03/2019</code></strong> :
-Adds a homework “Tutorial 01” under CS2103T tab with the deadline on 05 March 2019</p>
+<p><strong><code>add-hw mc/CS2103T hw/Tutorial 01 d/05/05/2019</code></strong> :
+Adds a CS2103T homework “Tutorial 01” with the deadline on 05 May 2019</p>
 </li>
 <li>
-<p><strong><code>delete 3</code></strong> : deletes the 3rd  item shown in the current manager</p>
+<p><strong><code>delete-hw 3</code></strong> : deletes the 3rd homework shown in the homework manager</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -107,20 +117,31 @@ Homework Manager, Notes Manager, CAP Manager.</p>
 <div class="sect2">
 <h3 id="homeworkmanager"><a class="link" href="#homeworkmanager">3.1. HomeworkManager</a></h3>
 <div class="paragraph">
-<p>You can record and manage your homework here by adding, deleting, editing
-your homework based on your progress.</p>
+<p>Let this handy manage manage your homework by adding, deleting, editing your homework
+based on your progress. You can also check on the deadlines of all your homework before
+deciding which homework to attempt!</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="notesmanager"><a class="link" href="#notesmanager">3.2. NotesManager</a></h3>
 <div class="paragraph">
-<p>You can add, delete, and edit your notes here.</p>
+<p>In this manager, you can add, delete, edit and save your notes here. Every note saved
+here counts toward saving the environment by not using paper! Lets fight against global
+warming! Fighting!</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="capmanager"><a class="link" href="#capmanager">3.3. CAPManager</a></h3>
 <div class="paragraph">
-<p>You can record and keep track of your Cumulative Aggregate Points (CAP) here by adding, deleting the grades you have received for modules you have taken and also project your expected CAP.</p>
+<p>This manager allows you to record and keep track of your Cumulative Aggregate Points (CAP)
+by adding, deleting the grades you have received for modules you have taken and also
+project your current CAP.</p>
+</div>
+<div class="paragraph">
+<p>This manager will always be your reminder to work hard and get
+more 'A&#8217;s for future modules! At the same time allows you to have an overview of your
+completed modules which provides you the assistance you need to plan for your upcoming
+semesters.</p>
 </div>
 </div>
 </div>
@@ -129,7 +150,8 @@ your homework based on your progress.</p>
 <h2 id="Commands"><a class="link" href="#Commands">4. Commands</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As UltiStudent contains many different commands and features, do refer to the command format below to help you better understand how to use each command to their best.</p>
+<p>As UltiStudent contains many different commands and features, do refer to the command
+format below to help you better understand how to use each command to their best.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -139,12 +161,29 @@ your homework based on your progress.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add mc/MODULECODE</code>, <code>MODULECODE</code> is a parameter which can be used as <code>add c/CS2103T</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in
+<code>add-hw mc/MODULECODE hw/HOMEWORK d/dd/mm/yyyy</code>, <code>MODULECODE</code> is a parameter which
+can be used as <code>add-hw mc/CS2103T</code> but of course you would have to do the same for
+<code>HOMEWORK</code> and <code>dd/mm/yyyy</code>.</p>
 </li>
 <li>
-<p>All parameters must be supplied by users in this order:  <code>add mc/MODULECODE hw/HOMEWORK d/DEADLINE</code>. Deadline format: DD/MM/YYYY</p>
+<p>All parameters must be supplied by users: <code>add-hw mc/MODULECODE hw/HOMEWORK d/DEADLINE</code>.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>DEADLINE must be in dd/mm/yyyy</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -155,9 +194,9 @@ your homework based on your progress.</p>
 HomeworkManager, NotesManager, CapManager.</p>
 </div>
 <div class="paragraph">
-<p>The commands differ by the entity placed at the end of each command.
-<code>add-xx</code>, <code>delete-xx</code>, <code>edit-xx</code> where xx should be replaced by either
-"hw" for homework, "note", or "cap".</p>
+<p>The commands differ by the entity placed at the end of each command. <code>add-x</code>, <code>delete-x</code>,
+<code>edit-x</code> where <code>x</code> should be replaced by either "hw" for homework, "note" for note,
+or "cap" for cumulative average point!</p>
 </div>
 <div class="sect3">
 <h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.1.1. Viewing help : <code>help</code></a></h4>
@@ -260,8 +299,36 @@ There is no need to save manually.</p>
 <div class="sect3">
 <h4 id="adding-a-homework-code-add-hw-code"><a class="link" href="#adding-a-homework-code-add-hw-code">4.2.1. Adding a homework: <code>add-hw</code></a></h4>
 <div class="paragraph">
-<p>Adds a new homework task to the UltiStudent<br>
-Format: <code>add  mc/MODULECODE hw/HOMEWORK d/DEADLINE</code></p>
+<p>Have a homework but unable to attend to it immediately? No worries! Let Homework Manager help
+you keep track of them! By using <code>add-hw</code>, you can command this manager to remember your homework
+for you!</p>
+</div>
+<div class="paragraph">
+<p>Sadly, it doesn&#8217;t do your homework for you&#8230;&#8203; but hey it reduces your worries on forgetting
+your homework!</p>
+</div>
+<div class="paragraph">
+<p>To use this command you have to adhere to this format: <code>add-hw mc/MODULECODE hw/HOMEWORK d/DEADLINE</code>
+else homework manager would not be able to understand what you are trying to tell it to do.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+DEADLINE must be in dd/mm/yyyy format and DEADLINE should not be a date that is before today!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Okay enough explanation and time for an example!</p>
+</div>
+<div class="paragraph">
+<p>Lets say we have to do Tutorial 1 for CS1101S by 1st May 2019. We could command this manager to
+remember it for us by using <code>add-hw mc/CS1101S hw/Tutorial 1 d/01/05/2019</code>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -270,25 +337,24 @@ Format: <code>add  mc/MODULECODE hw/HOMEWORK d/DEADLINE</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Priorities are low by default if not set, and acceptable values are low, normal, high.
+Pro tip here! The ordering of <code>mc/MODULECODE</code>, <code>hw/HOMEWORK</code> and <code>d/DEADLINE</code> can be jumbled around!
+so do not worry that this handy manager will not understand what you are trying to command it to do!
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add-hw mc/CS2103T hw/User Guide Draft 1
-d/05/03/2019</code></p>
-</li>
-<li>
-<p><code>add-hw mc/CS3230 hw/Tutorial 3
-d/07/03/2019</code></p>
-</li>
-</ul>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Sadly Homework Manager is english educated only&#8230;&#8203; Therefore it only accepts english characters and numbers.
+Maybe Homework Manager would be educated in other languages to accept other characters in future!
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -635,8 +701,8 @@ Format: -</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add Homework</strong> <code>add-hw mc/MODULECODE hw/HOMEWORK d/DEADLINE [p/PRIORITY]&#8230;&#8203;</code><br>
-e.g. <code>add-hw mc/CS2103T hw/Tutorial 3 p/high</code></p>
+<p><strong>Add Homework</strong> <code>add-hw mc/MODULECODE hw/HOMEWORK d/DEADLINE</code><br>
+e.g. <code>add-hw mc/CS2103T hw/Tutorial 3 d/01/05/2019</code></p>
 </li>
 <li>
 <p><strong>Delete Homework</strong> : <code>delete INDEX</code><br>
@@ -701,4 +767,4 @@ e.g.<code>select 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-06 13:14:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-06 14:14:30 UTC</div></div></div></body></html>
