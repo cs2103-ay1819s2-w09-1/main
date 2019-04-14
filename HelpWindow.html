@@ -835,15 +835,21 @@ The format for this command is that of <code>delete-cap INDEX</code>.</p>
 <div class="paragraph">
 <p>Examples:
 For example, if you would like to delete the module ST2334 from CAP Manager, simply look for its index number. and apply it to the format!
-In this case, we would enter <code>delete-cap 14</code>.</p>
+In this case, we would enter:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EditedCapManager.png" alt="EditedCapManager" width="790">
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete-cap 14</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>After entering the command:</p>
+<p>Before deleting:
+image::EditedCapManager.png[width="790"]</p>
+</div>
+<div class="paragraph">
+<p>After entering the delete command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -907,7 +913,7 @@ see the modules of the semesters we are interested in. Now let&#8217;s see how w
 </div>
 <div class="paragraph">
 <p>The <code>list-cap</code> command will help you to view your full list of modules in the CAP Manager.
-All you have to do is enter <code>list-cap</code> into the command box and TADAH.</p>
+All you have to do is enter <code>list-cap</code> into the command box and TADAH! You will see all the modules you have taken.</p>
 </div>
 </div>
 </div>
@@ -1007,19 +1013,27 @@ e.g. <code>save-note</code></p>
 e.g. `add-cap mc/CS2101 g/A- mcs/4 sem/Y2S2 `</p>
 </li>
 <li>
-<p><strong>Delete Cap Entry</strong> : <code>delete-note INDEX</code><br>
-e.g. <code>delete 1</code></p>
+<p><strong>Delete Cap Entry</strong> : <code>delete-cap INDEX</code><br>
+e.g. <code>delete-cap 1</code></p>
 </li>
 <li>
-<p><strong>Edit Cap Entry by Index</strong> : <code>edit-note INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code><br>
+<p><strong>Edit Cap Entry by Index</strong> : <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code><br>
 e.g. <code>edit-cap 2 g/B+ mcs/4</code></p>
 </li>
 <li>
-<p><strong>Edit Cap Entry by Code</strong> : <code>edit-note MODULECODE  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [semd/MODULESEMESTER]</code><br>
+<p><strong>Edit Cap Entry by Code</strong> : <code>edit-cap MODULECODE  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code><br>
 e.g. <code>edit-cap-mc CS3203 g/A- mcs/8</code></p>
+</li>
+<li>
+<p><strong>Find Cap Entry by Semester</strong> : <code>find-cap MODULESEMESTER</code><br>
+e.g. <code>find-cap Y2S2 Y3S1</code></p>
+</li>
+<li>
+<p><strong>List all Modules in the CAP Manager</strong> : <code>list-cap</code><br>
+e.g. <code>list-cap</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 11:17:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:50:51 UTC</div></div></div></body></html>
