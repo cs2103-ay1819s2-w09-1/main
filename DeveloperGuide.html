@@ -11,7 +11,7 @@
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#symbols">1.1. Symbols</a></li>
+<li><a href="#callouts-symbols">1.1. Callouts &amp; Symbols</a></li>
 </ul>
 </li>
 <li><a href="#setting-up">2. Setting up</a>
@@ -40,9 +40,10 @@
 <li><a href="#find-module-feature">4.4. Find module feature</a></li>
 <li><a href="#editing-and-saving-a-note-code-edit-note-code-code-save-note-code">4.5. Editing and Saving a note : <code>edit-note</code> <code>save-note</code></a></li>
 <li><a href="#editing-a-cap-entry-code-edit-cap-code">4.6. Editing a Cap Entry : <code>edit-cap</code></a></li>
-<li><a href="#undo-redo-feature">4.7. Undo/Redo feature</a></li>
-<li><a href="#logging">4.8. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
+<li><a href="#finding-a-cap-entry-code-delete-cap-code">4.7. Finding a Cap Entry : <code>delete-cap</code></a></li>
+<li><a href="#undo-redo-feature">4.8. Undo/Redo feature</a></li>
+<li><a href="#logging">4.9. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.10. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -99,29 +100,22 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Welcome to UltiStudent!
+UltiStudent is a student application that effectively tackles the problem of having too many applications to manage
+their school life. To improve the quality of student life in computing, UltiStudent provides a centralised platform
+for them to manage their homework, cumulative average point and notes.
 UltiStudent is a desktop-based application intended for students.
-This developer Guide is written for anyone who wishes to contribute to our project.</p>
+This developer Guide is written for anyone who wishes to contribute to our project.
+In here, you will find information to help you to set up our project and information to help you understand the
+architecture behind UltiStudent and how our key features work.</p>
 </div>
 <div class="paragraph">
-<p>This guide will provide <em>_</em> /
-D</p>
+<p>If you would like to help to improve this project by contributing, do contact us for more information!</p>
 </div>
 <div class="sect2">
-<h3 id="symbols"><a class="link" href="#symbols">1.1. Symbols</a></h3>
+<h3 id="callouts-symbols"><a class="link" href="#callouts-symbols">1.1. Callouts &amp; Symbols</a></h3>
 <div class="paragraph">
-<p>Before proceeding, do keep in mind the below call out signs.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-This callout indicates that there is something worth noting.
-</td>
-</tr>
-</table>
+<p>Before proceeding, do refer to the below callout signs that will be used across this document. Familiarising yourself
+with them will definitely prove to be helpful.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -130,7 +124,7 @@ This callout indicates that there is something worth noting.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Key information that you should take note of.
+This callout shares note-worthy information with you. Do read them for a better understanding of the document.
 </td>
 </tr>
 </table>
@@ -142,7 +136,21 @@ Key information that you should take note of.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Helpful tips that can prove to be really handy for you!
+This callout shares helpful tips with you. Not to worry, tips can be good to know but are not vital.
+Information found here are additional and can prove to be handy for you.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This callout indicates that there is worth being cautioned of. You are encouraged to the read information in here.
+If you are not careful, you may encounter problems.
 </td>
 </tr>
 </table>
@@ -977,12 +985,206 @@ the cap entry&#8217;s index with the <code>edit-cap</code> command or the cap en
 <img src="images/EditCapManagerSequenceDiagram2.png" alt="EditCapManagerSequenceDiagram2" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how <code>edit-cap</code> behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The user executes <code>edit-cap 2 g/A sem/Y2S2</code> to edit the cap entry in the 2nd index with grade A and
+moduleSemester of <code>Y2S2</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: The user executes <code>edit-cap 2 g/A sem/Y2S2</code> to edit the cap entry in the 2nd index with grade A and
+moduleSemester of <code>Y2S2</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>: The user executes <code>edit-cap 2 g/A sem/Y2S2</code> to edit the cap entry in the 2nd index with grade A and
+moduleSemester of <code>Y2S2</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.6.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-store-the-cap-score"><a class="link" href="#aspect-how-to-store-the-cap-score">Aspect: How to store the Cap Score.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Store the cap score as a static variable in CapEntry class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Diffi</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store the cap score as a separate class that is then store in UltiStudent.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Each versioned UltiStudent will have their own cap score.</p>
+</li>
+<li>
+<p>Cons: Will use more memory and is harder to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-calculate-score-of-module-grade"><a class="link" href="#aspect-how-to-calculate-score-of-module-grade">Aspect: How to calculate score of module grade.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use a Hash Map to get the Store the cap score as a static variable in CapEntry class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Lower time complexity O(1) and cleaner code.</p>
+</li>
+<li>
+<p>Cons: Larger memory occupation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use switch cases to find and allocate score to grade.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier readability.</p>
+</li>
+<li>
+<p>Cons: Slower time complexity, worst case O(N).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.7. Undo/Redo feature</a></h3>
+<h3 id="finding-a-cap-entry-code-delete-cap-code"><a class="link" href="#finding-a-cap-entry-code-delete-cap-code">4.7. Finding a Cap Entry : <code>delete-cap</code></a></h3>
+<div class="paragraph">
+<p>This feature allows the user to delete a cap entry from the cap entry list. Users can do so either via:
+the cap entry&#8217;s index with the <code>edit-cap</code> command or the cap entry&#8217;s module code with the <code>edit-cap-mc</code></p>
+</div>
 <div class="sect3">
 <h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.7.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>delete-cap</code> command is facilitated by the Logic and Model components of the application, UltiStudent.</p>
+</div>
+<div class="paragraph">
+<p>The activity diagram below shows how the deleting of cap entries work when the user enters
+<code>delete-cap</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteCapEntryActivityDiagram.png" alt="DeleteCapEntryActivityDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>The sequence diagram for the "Update Module Semester" reference frame above can be seen below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditCapManagerSequenceDiagram2.png" alt="EditCapManagerSequenceDiagram2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how <code>delete-cap</code> behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The user executes <code>edit-cap 2 g/A sem/Y2S2</code> to edit the cap entry in the 2nd index with grade A and
+moduleSemester of <code>Y2S2</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: The user executes <code>edit-cap 2 g/A sem/Y2S2</code> to edit the cap entry in the 2nd index with grade A and
+moduleSemester of <code>Y2S2</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.7.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-store-the-cap-score-2"><a class="link" href="#aspect-how-to-store-the-cap-score-2">Aspect: How to store the Cap Score.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Store the cap score as a static variable in CapEntry class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store the cap score as a separate class that is then store in UltiStudent.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons: Will use more memory and is harder to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-calculate-score-of-module-grade-2"><a class="link" href="#aspect-how-to-calculate-score-of-module-grade-2">Aspect: How to calculate score of module grade.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use a Hash Map to get the Store the cap score as a static variable in CapEntry class.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Lower time complexity O(1) and cleaner code.</p>
+</li>
+<li>
+<p>Cons: Larger memory occupation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use switch cases to find and allocate score to grade.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier readability.</p>
+</li>
+<li>
+<p>Cons: Slower time complexity, worst case O(N).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.8. Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.8.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedUltiStudent</code>.
 It extends <code>UltiStudent</code> with an undo/redo history, stored internally as an <code>UltiStudentStateList</code> and <code>currentStatePointer</code>.
@@ -1112,7 +1314,7 @@ If the <code>currentStatePointer</code> is at index <code>UltiStudentStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.7.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1182,14 +1384,14 @@ If the <code>currentStatePointer</code> is at index <code>UltiStudentStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.9. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.10, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1220,7 +1422,7 @@ If the <code>currentStatePointer</code> is at index <code>UltiStudentStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.10. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2681,4 +2883,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 17:33:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 23:07:05 UTC</div></div></div></body></html>
