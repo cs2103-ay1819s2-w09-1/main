@@ -1097,7 +1097,92 @@ complexities involved when taking into account the different cases upon using
 </div>
 <div class="sect2">
 <h3 id="editing-and-saving-a-note-code-edit-note-code-code-save-note-code"><a class="link" href="#editing-and-saving-a-note-code-edit-note-code-code-save-note-code">4.7. Editing and Saving a note : <code>edit-note</code> <code>save-note</code></a></h3>
-
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These two feature allows the user to edit existing note and save them after editing.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="overview-7"><a class="link" href="#overview-7">4.7.1. Overview</a></h4>
+<div class="paragraph">
+<p>The <code>edit-note</code> command helps the user to open the selected notes to allow the user to start editing its content
+by displaying all the content on the <code>NotesManagerMainPanel</code> which is a text field. It requires the need of the
+<code>save-note</code> command to help save the user&#8217;s edits</p>
+</div>
+<div class="paragraph">
+<p>Below is an activity diagram of how the users use <code>edit-note</code> and <code>save-note</code> to facilitate adding contents to
+their existing notes:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Edit&SaveNoteActivityDiagram.png" alt="Edit&amp;SaveNoteActivityDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: User will key in <code>edit-note INDEX</code> on the command line</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: System will do a validation check to see if <code>INDEX</code> of note exist in the list of notes in the <code>Model</code>.
+If note does not exist, it will throw a <code>ParserException</code> to the user. Else note will be opened and proceed to
+step 3.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>: Once it is opened, <code>NotesManagerMainPanel</code> will be enabled, allowing the user to start typing their
+notes in the text field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>: When the user is done editing, he/she can use <code>save-note</code> in the command line to save the edited
+content to the opened note.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong>: Upon successful save, <code>NotesManagerMainPanel</code> will be disabled and user will not be able to type
+anything on <code>NotesManagerMainPanel</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.7.2. Design Considerations</a></h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Options</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pro</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cons</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.</strong> Users to type their content on the command line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Easy implementation<br>
+ - Single source of input<br>
+ - No need to handle special key press</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Not user friendly<br>
+ - Non-editable visual (textfield)<br>
+ - Special commands for <code>NotesManager</code> to take in input from Command Line as note&#8217;s content<br>
+ - A need to convert from Command Line mode to Text Input mode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.</strong> Users to type their content on the <code>NotesManagerMainPanel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- User friendly<br>
+ - A separate source of input<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Two sources of input, Command Line and TextField<br>
+ - Harder implementation, requires handling of special key press</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Option 2 is being selected and implemented as we focus on the users convenience and the ability to edit their
+notes easily. Separation of command line and notes text field would reduce the number of commands the user
+has to remember and there will be lesser confusion of command line mode or text input mode.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="editing-a-cap-entry-code-edit-cap-code"><a class="link" href="#editing-a-cap-entry-code-edit-cap-code">4.8. Editing a Cap Entry : <code>edit-cap</code></a></h3>
@@ -1164,7 +1249,7 @@ The <code>moduleSemesterOfCapEntryToEdit</code> will be deleted to the <code>Uni
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-store-the-cap-score"><a class="link" href="#aspect-how-to-store-the-cap-score">Aspect: How to store the Cap Score.</a></h5>
 <div class="ulist">
@@ -2106,4 +2191,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:42:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 14:01:38 UTC</div></div></div></body></html>
