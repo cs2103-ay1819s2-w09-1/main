@@ -43,6 +43,56 @@
 <li><a href="#editing-and-saving-a-note-code-edit-note-code-code-save-note-code">4.7. Editing and Saving a note : <code>edit-note</code> <code>save-note</code></a></li>
 <li><a href="#editing-a-cap-entry-code-edit-cap-code">4.8. Editing a Cap Entry : <code>edit-cap</code></a></li>
 <li><a href="#deleting-a-cap-entry-code-delete-cap-code">4.9. Deleting a Cap Entry : <code>delete-cap</code></a></li>
+<li><a href="#logging">4.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
+</ul>
+</li>
+<li><a href="#documentation">5. Documentation</a>
+<ul class="sectlevel2">
+<li><a href="#editing-documentation">5.1. Editing Documentation</a></li>
+<li><a href="#publishing-documentation">5.2. Publishing Documentation</a></li>
+<li><a href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></li>
+<li><a href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></li>
+<li><a href="#Docs-PerFileDocSettings">5.5. Per-file Documentation Settings</a></li>
+<li><a href="#site-template">5.6. Site Template</a></li>
+</ul>
+</li>
+<li><a href="#Testing">6. Testing</a>
+<ul class="sectlevel2">
+<li><a href="#running-tests">6.1. Running Tests</a></li>
+<li><a href="#types-of-tests">6.2. Types of tests</a></li>
+<li><a href="#troubleshooting-testing">6.3. Troubleshooting Testing</a></li>
+</ul>
+</li>
+<li><a href="#dev-ops">7. Dev Ops</a>
+<ul class="sectlevel2">
+<li><a href="#build-automation">7.1. Build Automation</a></li>
+<li><a href="#continuous-integration">7.2. Continuous Integration</a></li>
+<li><a href="#coverage-reporting">7.3. Coverage Reporting</a></li>
+<li><a href="#documentation-previews">7.4. Documentation Previews</a></li>
+<li><a href="#making-a-release">7.5. Making a Release</a></li>
+<li><a href="#managing-dependencies">7.6. Managing Dependencies</a></li>
+</ul>
+</li>
+<li><a href="#product-scope">Appendix A: Product Scope</a></li>
+<li><a href="#user-stories">Appendix B: User Stories</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
+<li><a href="#glossary">Appendix E: Glossary</a></li>
+<li><a href="#product-survey">Appendix F: Product Survey</a></li>
+<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<ul class="sectlevel2">
+<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
+<li><a href="#opening-a-manager">G.2. Opening a manager</a></li>
+<li><a href="#adding-a-homework">G.3. Adding a homework</a></li>
+<li><a href="#deleting-a-homework-entry">G.4. Deleting a homework entry</a></li>
+<li><a href="#editing-a-homework-entry">G.5. Editing a homework entry</a></li>
+<li><a href="#finding-homework-entries-of-which-contains-this-module">G.6. Finding homework entries of which contains this module</a></li>
+<li><a href="#list-all-homework-entries">G.7. List all homework entries</a></li>
+<li><a href="#adding-a-note">G.8. Adding a note</a></li>
+<li><a href="#deleting-a-note">G.9. Deleting a note</a></li>
+<li><a href="#editing-a-note">G.10. Editing a Note</a></li>
+<li><a href="#saving-a-note">G.11. Saving a Note</a></li>
 </ul>
 </li>
 </ul>
@@ -1342,8 +1392,6 @@ the cap entry&#8217;s index with the <code>delete-cap</code> command or the cap 
 <p>The activity diagram below shows how the deleting of cap entries work when the user enters
 <code>delete-cap</code>.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/DeleteCapManagerActivityDiagram.png" alt="DeleteCapManagerActivityDiagram" width="800">
@@ -1368,10 +1416,11 @@ The <code>UniqueCapEntryList</code> is then updated and the CAP score is updated
 <p><strong>Step 4</strong>: Check if after deleting the target <code>CapEntry</code> the <code>UniqueCapEntryList</code> still has a <code>CapEntry</code> of the same semester. If there is,
 the module semester will be deleted from the <code>UniqueModuleSemesterList</code>. Then the <code>UniqueModuleSemesterList</code> will be updated.</p>
 </div>
-<div class="paragraph">
-<p>==== Design Considerations
-===== Aspect: How to store the Cap Score.</p>
 </div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.9.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-store-the-cap-score-2"><a class="link" href="#aspect-how-to-store-the-cap-score-2">Aspect: How to store the Cap Score.</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1402,9 +1451,9 @@ the module semester will be deleted from the <code>UniqueModuleSemesterList</cod
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>===== Aspect: How to calculate score of module grade.</p>
 </div>
+<div class="sect4">
+<h5 id="aspect-how-to-calculate-score-of-module-grade"><a class="link" href="#aspect-how-to-calculate-score-of-module-grade">Aspect: How to calculate score of module grade.</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1435,16 +1484,18 @@ the module semester will be deleted from the <code>UniqueModuleSemesterList</cod
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>=== Logging</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">[Implementation-Configuration]</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1473,15 +1524,18 @@ the module semester will be deleted from the <code>UniqueModuleSemesterList</cod
 </li>
 </ul>
 </div>
-<div id="Implementation-Configuration" class="paragraph">
-<p>=== Configuration</p>
 </div>
+<div class="sect2">
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
-<div class="paragraph">
-<p>== Documentation</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>We use asciidoc for writing documentation.</p>
 </div>
@@ -1497,22 +1551,21 @@ We chose asciidoc over Markdown because asciidoc, although a bit more complex th
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>=== Editing Documentation</p>
-</div>
+<div class="sect2">
+<h3 id="editing-documentation"><a class="link" href="#editing-documentation">5.1. Editing Documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
 Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
 </div>
-<div class="paragraph">
-<p>=== Publishing Documentation</p>
 </div>
+<div class="sect2">
+<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">5.2. Publishing Documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.</p>
 </div>
-<div class="paragraph">
-<p>=== Converting Documentation to PDF format</p>
 </div>
+<div class="sect2">
+<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
 </div>
@@ -1541,9 +1594,9 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 </div>
 <div class="title">Figure 17. Saving documentation as PDF files in Chrome</div>
 </div>
-<div id="Docs-SiteWideDocSettings" class="paragraph">
-<p>=== Site-wide Documentation Settings</p>
 </div>
+<div class="sect2">
+<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
 <p>The <a href="https://github.com/cs2103-ay1819s2-w09-1/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
 </div>
@@ -1600,9 +1653,9 @@ This will render the SE-EDU navigation bar at the top of the page, and add some 
 </tr>
 </tbody>
 </table>
-<div id="Docs-PerFileDocSettings" class="paragraph">
-<p>=== Per-file Documentation Settings</p>
 </div>
+<div class="sect2">
+<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">5.5. Per-file Documentation Settings</a></h3>
 <div class="paragraph">
 <p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
 </div>
@@ -1657,9 +1710,9 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>=== Site Template</p>
 </div>
+<div class="sect2">
+<h3 id="site-template"><a class="link" href="#site-template">5.6. Site Template</a></h3>
 <div class="paragraph">
 <p>The files in <a href="https://github.com/cs2103-ay1819s2-w09-1/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
@@ -1684,12 +1737,14 @@ The SE-EDU team does not provide support for modified template files.</p>
 </tr>
 </table>
 </div>
-<div id="Testing" class="paragraph">
-<p>== Testing</p>
 </div>
-<div class="paragraph">
-<p>=== Running Tests</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="Testing"><a class="link" href="#Testing">6. Testing</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="running-tests"><a class="link" href="#running-tests">6.1. Running Tests</a></h3>
 <div class="paragraph">
 <p>There are three ways to run tests.</p>
 </div>
@@ -1749,9 +1804,9 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <div class="paragraph">
 <p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
 </div>
-<div class="paragraph">
-<p>=== Types of tests</p>
 </div>
+<div class="sect2">
+<h3 id="types-of-tests"><a class="link" href="#types-of-tests">6.2. Types of tests</a></h3>
 <div class="paragraph">
 <p>We have two types of tests:</p>
 </div>
@@ -1791,9 +1846,11 @@ e.g. <code>seedu.ultistudent.logic.LogicManagerTest</code></p>
 </li>
 </ol>
 </div>
+</div>
+<div class="sect2">
+<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">6.3. Troubleshooting Testing</a></h3>
 <div class="paragraph">
-<p>=== Troubleshooting Testing
-<strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
+<p><strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1805,34 +1862,38 @@ e.g. <code>seedu.ultistudent.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>== Dev Ops</p>
 </div>
-<div class="paragraph">
-<p>=== Build Automation</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="build-automation"><a class="link" href="#build-automation">7.1. Build Automation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
 </div>
-<div class="paragraph">
-<p>=== Continuous Integration</p>
 </div>
+<div class="sect2">
+<h3 id="continuous-integration"><a class="link" href="#continuous-integration">7.2. Continuous Integration</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
 </div>
-<div class="paragraph">
-<p>=== Coverage Reporting</p>
 </div>
+<div class="sect2">
+<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">7.3. Coverage Reporting</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://coveralls.io/">Coveralls</a> to track the code coverage of our projects. See <a href="UsingCoveralls.html">UsingCoveralls.adoc</a> for more details.</p>
 </div>
-<div class="paragraph">
-<p>=== Documentation Previews
-When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
 </div>
+<div class="sect2">
+<h3 id="documentation-previews"><a class="link" href="#documentation-previews">7.4. Documentation Previews</a></h3>
 <div class="paragraph">
-<p>=== Making a Release</p>
+<p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="making-a-release"><a class="link" href="#making-a-release">7.5. Making a Release</a></h3>
 <div class="paragraph">
 <p>Here are the steps to create a new release.</p>
 </div>
@@ -1852,9 +1913,9 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Managing Dependencies</p>
 </div>
+<div class="sect2">
+<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">7.6. Managing Dependencies</a></h3>
 <div class="paragraph">
 <p>A project often depends on third-party libraries. For example, UltiStudent depends on the <a href="https://github.com/FasterXML/jackson">Jackson library</a> for JSON parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:</p>
 </div>
@@ -1868,9 +1929,12 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>== Product Scope</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Target user profile</strong>:</p>
 </div>
@@ -1896,9 +1960,11 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 <div class="paragraph">
 <p><strong>Value proposition</strong>: manage student life faster and better than a typical mouse/GUI driven app</p>
 </div>
-<div class="paragraph">
-<p>== User Stories</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
 </div>
@@ -1959,9 +2025,11 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
-<div class="paragraph">
-<p>== Use Cases</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
@@ -2017,9 +2085,11 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
-<div class="paragraph">
-<p>== Non Functional Requirements</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2036,9 +2106,11 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
-<div class="paragraph">
-<p>== Glossary</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
+<div class="sectionbody">
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
@@ -2051,9 +2123,11 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>== Product Survey</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Product Name</strong></p>
 </div>
@@ -2086,9 +2160,11 @@ When a pull request has changes to asciidoc files, you can use <a href="https://
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>== Instructions for Manual Testing</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
 </div>
@@ -2104,9 +2180,8 @@ These instructions only provide a starting point for testers to work on; testers
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>=== Launch and Shutdown</p>
-</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2139,31 +2214,114 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
-<div class="paragraph">
-<p>=== Deleting a person</p>
-</div>
+<div class="sect2">
+<h3 id="opening-a-manager"><a class="link" href="#opening-a-manager">G.2. Opening a manager</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Opening respective manager with the command: <code>open</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: Currently in Homework Manager with Homework icon being highlighted.<br></p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Test case: <code>open HomeworkManager</code><br>
+Expected: UI does not change changes</p>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+<p>Prerequisites: Currently in other Manager with Homework icon not being highlighted.<br></p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Test case: <code>open HomeworkManager</code><br>
+Expected: HomeworkManager is opened and GUI of HomeworkManager is shown</p>
+</li>
+<li>
+<p>Prerequisites: Currently in Notes Manager with Notes icon being highlighted.<br></p>
+</li>
+<li>
+<p>Test case: <code>open NotesManager</code><br>
+Expected: UI does not change changes</p>
+</li>
+<li>
+<p>Prerequisites: Currently in other Manager with Homework icon not being highlighted.<br></p>
+</li>
+<li>
+<p>Test case: <code>open NotesManager</code><br>
+Expected: NotesManager is opened and GUI of NotesManager is shown</p>
+</li>
+<li>
+<p>Prerequisites: Currently in Cap Manager with Notes icon being highlighted.<br></p>
+</li>
+<li>
+<p>Test case: <code>open CapManager</code><br>
+Expected: UI does not change changes</p>
+</li>
+<li>
+<p>Prerequisites: Currently in other Manager with Homework icon not being highlighted.<br></p>
+</li>
+<li>
+<p>Test case: <code>open CapManager</code><br>
+Expected: CapManager is opened and GUI of CapManager is shown</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-homework"><a class="link" href="#adding-a-homework">G.3. Adding a homework</a></h3>
+<div class="paragraph">
+<p>Adding a homework with the command: <code>add-hw</code></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: HomeworkManager has to be opened to see changes on GUI.
+(i.e. "open HomeworkManager" command has to be ran first)</p>
+</li>
+<li>
+<p>Test case: <code>add-hw mc/CS2103T hw/Tutorial 1 d/22/05/2019</code><br>
+Expected: A homework will be added into the list of homework in the Homework Main Panel.
+The module code in which homework belongs to is also added in the Homework SubPanel list if not present before.</p>
+</li>
+<li>
+<p>Test case: <code>add-hw mc/CSXXXXT hw/Tutorial 1 d/22/05/2019</code><br>
+Expected: No homework is added. Error details will be shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect add-hw commands to try : <code>add-hw</code>, <code>add-hw mc/CS2103T hw/Tutorial 1 d/dd/MM/YYYY</code>
+(where dd/MM/YYYY is a past date)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-homework-entry"><a class="link" href="#deleting-a-homework-entry">G.4. Deleting a homework entry</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a homework while all homework are listed with the command: <code>delete-hw</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Use the sample data that using SampleDataUtil. SampleDataUtil autonmatically generates sample data
+when the json file is empty.</p>
+</li>
+<li>
+<p>Test case: <code>delete-hw 1</code><br>
+Expected: First homework is deleted from the list. Details of the deleted homework shown in the status message.
+Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>delete-hw 0</code><br>
+Expected: No homework is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete-hw</code>, <code>delete-hw x</code> (where x is larger than the list size)<br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -2171,32 +2329,183 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
+<div class="sect2">
+<h3 id="editing-a-homework-entry"><a class="link" href="#editing-a-homework-entry">G.5. Editing a homework entry</a></h3>
 <div class="paragraph">
-<p>=== Saving data</p>
+<p>Edit a homework while all homework are listed with the command: <code>edit-hw</code></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with missing/corrupted data files</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Prerequisites: Use the sample data that using SampleDataUtil. SampleDataUtil automatically generates sample data
+when the json file is empty.</p>
+</li>
+<li>
+<p>Test case: <code>edit-hw 1 d/30/05/2019</code><br>
+Expected: The deadline of the first homework is changed to 30/05/2019. Details of the edited homework shown in the status message.
+Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>edit-hw 0</code><br>
+Expected: No homework is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect edit commands to try: <code>edit-hw</code>, <code>edit-hw x</code> (where x is larger than the list size), <code>edit-hw 30/05/2019</code><br>
+Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
+<div class="sect2">
+<h3 id="finding-homework-entries-of-which-contains-this-module"><a class="link" href="#finding-homework-entries-of-which-contains-this-module">G.6. Finding homework entries of which contains this module</a></h3>
 <div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<p>Finds homework that has a homework module and displays these modules in a list with the command: <code>find-mod</code></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Use the sample data that using SampleDataUtil. SampleDataUtil automatically generates sample data
+when the json file is empty.</p>
+</li>
+<li>
+<p>Test case: <code>find-mod CS2030</code><br>
+Expected: The homework list displays homeworks that has CS2030 as part of its homework module.</p>
+</li>
+<li>
+<p>Test case: <code>find-mod x</code> where x is any module code that is not present in the module code list.<br>
+Expected: No homework is displayed in the homework list. Status bar shows that "0 homework listed!"</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-homework-entries"><a class="link" href="#list-all-homework-entries">G.7. List all homework entries</a></h3>
+<div class="paragraph">
+<p>Lists all existing homework entries with the command: <code>list-hw</code></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Use the sample data that using SampleDataUtil. SampleDataUtil automatically generates sample data
+when the json file is empty.</p>
+</li>
+<li>
+<p>Test case: <code>find-mod CS2030</code> followed by <code>list-hw</code><br>
+Expected: The homework list displays all existing homework entry.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-note"><a class="link" href="#adding-a-note">G.8. Adding a note</a></h3>
+<div class="paragraph">
+<p>Adding a note with the command: <code>add-note</code></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: NotesManager has to be opened. (i.e. "open NotesManager" command has to be ran first)</p>
+</li>
+<li>
+<p>Test case: <code>add-note mc/CS2103T n/Week 7 Tutorial</code>
+Expected: A note will be added into the list of note in the Notes Main Panel.</p>
+</li>
+<li>
+<p>Test case: <code>add-note mc/CSXXXXT n/Tutorial 1</code>
+Expected: No note is added. Error details will be shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect add-note commands to try : <code>add-note</code>, <code>add-note mc/CS2103T n/</code>(where note name is a whitespace)
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-note"><a class="link" href="#deleting-a-note">G.9. Deleting a note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a note while all note are listed with the command: <code>delete-note</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Use the sample data that using SampleDataUtil. SampleDataUtil autonmatically generates sample data
+when the json file is empty.</p>
+</li>
+<li>
+<p>Test case: <code>delete-note 1</code><br>
+Expected: First note is deleted from the list. Details of the deleted note shown in the status message.
+Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>delete-note 0</code><br>
+Expected: No note is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete-note</code>, <code>delete-note x</code> (where x is larger than the list size)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-note"><a class="link" href="#editing-a-note">G.10. Editing a Note</a></h3>
+<div class="paragraph">
+<p>Editing a note with the command : <code>edit-note</code></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: NotesManager has to be opened (i.e. <code>open NotesManager</code> command has to be ran first).
+Multiple notes in the notes list.</p>
+</li>
+<li>
+<p>Test case: <code>edit-note 1</code><br>
+Expected: First note will be selected and the contents of the selected note will be populated in the
+text area in the NotesMainPanel.</p>
+</li>
+<li>
+<p>Test case: <code>edit-note 0</code><br>
+Expected: No note will be selected. Error details will be shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect edit note commands to try: <code>edit-note</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-a-note"><a class="link" href="#saving-a-note">G.11. Saving a Note</a></h3>
+<div class="paragraph">
+<p>Saving a note with the command : <code>save-note</code></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: NotesManager has to be opened
+(i.e. <code>open NotesManager</code> command has to be ran first).
+Multiple notes in the notes list.
+A note has to be selected (i.e <code>edit-note INDEX</code> command has to ran to select a note at <code>INDEX</code>)</p>
+</li>
+<li>
+<p>Test case: <code>save-note</code><br>
+Expected: Contents of selected note will be saved. Details of note will be shown in the status message.</p>
+</li>
+<li>
+<p>Prerequisites: NotesManager has to be opened and no note is being selected.</p>
+</li>
+<li>
+<p>Test case: <code>save-note</code><br>
+Expected: Error details will be shown in the status message.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:00:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:11:23 UTC</div></div></div></body></html>
