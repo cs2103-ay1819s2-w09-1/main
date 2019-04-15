@@ -774,18 +774,17 @@ command to input to the Command Box would be:</p>
 Your CAP score will also be updated right away!
 In addition, the semester list will also be updated if you are adding a module that is newly taken.</p>
 </div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Unfortunately, UltiStudent&#8217;s CAP Manager does not allows U or S grade as of this version.
-Do look out for our next update, where we add the SU Command!
-</td>
-</tr>
-</table>
+<div class="ulist CAUTION">
+<ul class="CAUTION">
+<li>
+<p>Unfortunately, UltiStudent&#8217;s CAP Manager does not allows U or S grade as of this version.
+Do look out for our next update, where we add the SU Command!</p>
+</li>
+<li>
+<p>Currently, CAP Manager does not allow duplicate modules. Do use our <code>edit-cap</code> command to make changes to your grades
+for the case of retaking a module.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -796,22 +795,6 @@ Do look out for our next update, where we add the SU Command!
 <div class="paragraph">
 <p>If you made a mistake in entering the information for any particular CAP entry, do not worry!
  <code>edit-cap</code> command can easily fix that.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Index refers to the index number shown in the displayed CAP Entries list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>Edits the CAP entry at the specified <code>INDEX</code>.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -849,8 +832,16 @@ Do look out for our next update, where we add the SU Command!
 </div>
 </div>
 <div class="paragraph">
-<p>With that, all changes you have made will be reflected straightaway in the CAP manager.
+<p>Just like that, all changes you have made will be reflected straightaway in the CAP manager.
 This of course includes the module list, semester list and your CAP score!</p>
+</div>
+<div class="ulist CAUTION">
+<ul class="CAUTION">
+<li>
+<p>Do note that the index entered into the command <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203; up to the number of modules in the CAP Manager.
+In addition, do take note that at least one of the optional fields has to be provided.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -864,10 +855,8 @@ now allows you to edit the parameters of any modules through their module code i
 for more convenience!</p>
 </div>
 <div class="paragraph">
-<p>The format for the <code>edit-cap-mc</code> command is <code>edit-cap-mc MODULECODE [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
-</div>
-<div class="paragraph">
-<p>Just like the <code>edit-cap</code> command, <code>edit-cap-mc</code> has the same</p>
+<p>Just like the <code>edit-cap</code> command, <code>edit-cap-mc</code> edits the parameters of the modules in CAP Manager!
+For the sake of brevity, you can refer to the functionality and the effects by referring to the <code>edit-cap</code> command.</p>
 </div>
 </div>
 <div class="sect3">
@@ -905,7 +894,7 @@ image::EditedCapManager.png[width="790"]</p>
 </div>
 </div>
 <div class="paragraph">
-<p>And just like that the module is deleted! Once again, your CAP will be updated rightaway in the CAP Indicator!</p>
+<p>With that the module has been deleted. Once again, your CAP will be updated rightaway in the CAP Indicator!</p>
 </div>
 </div>
 <div class="sect3">
@@ -957,12 +946,12 @@ CAP indicator does not calculate your CAP score for only the displayed modules!
 <h4 id="filtering-a-cap-entry-code-list-cap-code"><a class="link" href="#filtering-a-cap-entry-code-list-cap-code">4.4.6. Filtering a CAP entry: <code>list-cap</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>list-cap</code>
-In the previous sub-section, we saw how using the <code>find-sem</code> can help us to filter through the entire CAP Manager and only
-see the modules of the semesters we are interested in. Now let&#8217;s see how we can view all of our modules again!</p>
+In the previous sub-section, we saw how using the <code>find-sem</code> command can help us to filter through the entire CAP
+Manager and only see the modules of the semesters we are interested in. Now let&#8217;s see how we can view all of our modules again!</p>
 </div>
 <div class="paragraph">
 <p>The <code>list-cap</code> command will help you to view your full list of modules in the CAP Manager.
-All you have to do is enter <code>list-cap</code> into the command box and TADAH! You will see all the modules you have taken.</p>
+All you have to do is enter <code>list-cap</code> into the command box and you will see all the modules you have taken.</p>
 </div>
 </div>
 </div>
@@ -1152,4 +1141,4 @@ e.g. <code>list-cap</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:36:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:42:12 UTC</div></div></div></body></html>
