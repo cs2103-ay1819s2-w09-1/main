@@ -23,7 +23,44 @@ illustrate the enhancement i made and also</p>
 </div>
 <div class="sect2">
 <h3 id="callouts-and-format"><a class="link" href="#callouts-and-format">Callouts and Format</a></h3>
-
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title=":information_source:"></i>
+</td>
+<td class="content">
+This callout shares note-worthy information with you. Do read them for a better understanding of the document.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title=":bulb:"></i>
+</td>
+<td class="content">
+This callout shares helpful tips with you. Not to worry, tips can be good to know but are not vital.
+Information found here are additional and can prove to be handy for you.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title=":warning:"></i>
+</td>
+<td class="content">
+This callout indicates that there is worth being cautioned of. You are encouraged to the read information in here.
+If you are not careful, you may encounter problems.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="definitions-of-terms"><a class="link" href="#definitions-of-terms">Definitions of Terms</a></h3>
@@ -57,13 +94,16 @@ the user&#8217;s CAP score whenever a change is made in the CAP manager. CAP Man
 cap entries they have taken by the semester by the <code>find-sem</code> command.</p>
 </li>
 <li>
-<p>Justification: The features in CAP manager helps.
-Allows users to forecast their cap score in advance, this lets users be able toquantify the importance of each grade,
-such that if they wish to pull up their CAP, they would know how many 'A&#8217;s they require.
-s feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: The ability to create cap entry depends on the CAP manager infrastructure. The infrastructure is
+a core component that of CAP manager, without which the CAP manager will fail to function. The infrastructure of the
+CAP manager also important to allow for future developments and extensions of the application.
+The commands (add-cap, edit-cap, edit-cap-mc, delete-cap, find-sem, list-cap) of CAP manager act on the model of CAP manager
+which are initiated and executed the logic component of CAP Manager which then interacts with the logic component of UltiStudent.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+<p>Highlights: This enhancement affects existing commands and commands to be added in future.
+This requires a thorough understanding of the starting infrastructure of the application in other to make changes to it.
+The implementation was challenging because I had to work within the restrictions of the of the existing application, this was especially so for the CAP calculation feature.</p>
 </li>
 </ul>
 </div>
@@ -77,10 +117,13 @@ s feature improves the product significantly because a user can make mistakes in
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Ensured loose coupling between each manager and seamless integration of CAP manager into UltiStudent.</p>
 </li>
 <li>
-<p>Ensured loose coupling between each manager and seamless integration of CAP manager into UltiStudent.</p>
+<p>Helped to manage the issue tracker of our group repository.</p>
+</li>
+<li>
+<p>Helped to review and merge pull requests.</p>
 </li>
 </ul>
 </div>
@@ -90,7 +133,8 @@ s feature improves the product significantly because a user can make mistakes in
 <div class="ulist">
 <ul>
 <li>
-<p>Wrote unit and integration tests for CAP manager&#8217;s commands and model.  (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Wrote unit and integration tests for CAP manager&#8217;s commands and model.  (Pull requests <a href="https://github.com/cs2103-ay1819s2-w09-1/main/pull/95">#95</a>,
+<a href="https://github.com/cs2103-ay1819s2-w09-1/main/pull/98">#98</a>, <a href="https://github.com/cs2103-ay1819s2-w09-1/main/pull/158">#158</a>, <a href="https://github.com/cs2103-ay1819s2-w09-1/main/pull/162">#162</a>)</p>
 </li>
 </ul>
 </div>
@@ -100,10 +144,30 @@ s feature improves the product significantly because a user can make mistakes in
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>User Guide</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote the features for all of CAP Manager Commands in the User Guide.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Wrote the introduction for the Developer Guide.</p>
+<p>Developer Guide</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote the Introduction for Developer Guide.</p>
+</li>
+<li>
+<p>Explained on how the edit-cap command works with Sequence Diagram.</p>
+</li>
+<li>
+<p>Explained on how the delete-cap command works with Activity Diagram.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -113,13 +177,22 @@ s feature improves the product significantly because a user can make mistakes in
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/CS2103-AY1819S2-W15-1/main/issues/111">111</a>,
+<a href="https://github.com/CS2103-AY1819S2-W15-1/main/issues/115">115</a>, <a href="https://github.com/CS2103-AY1819S2-W15-1/main/issues/118">118</a>,
+<a href="https://github.com/CS2103-AY1819S2-W15-1/main/issues/131">131</a>)</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated Travis CI into our repository.</p>
 </li>
 <li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+<p>Managed the initial set up of group repository on github.</p>
 </li>
 </ul>
 </div>
@@ -163,14 +236,11 @@ Cap Manager!</p>
 <div class="sect3">
 <h4 id="adding-a-cap-entry-code-add-cap-code"><a class="link" href="#adding-a-cap-entry-code-add-cap-code">Adding a CAP entry: <code>add-cap</code></a></h4>
 <div class="paragraph">
-<p>Adds a new Module to the CAP Manager<br></p>
+<p>Format: <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS sem/MODULESEMESTER</code></p>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s assume it&#8217;s the end of the semester and you just got your grades back.
 Simply add your modules to the Cap Manager with the <code>add-cap</code> command to view your updated CAP!</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS sem/MODULESEMESTER</code></p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <colgroup>
@@ -261,11 +331,11 @@ Do look out for our next update, where we add the SU Command!
 <div class="sect3">
 <h4 id="editing-a-cap-entry-by-index-code-edit-cap-code"><a class="link" href="#editing-a-cap-entry-by-index-code-edit-cap-code">Editing a CAP Entry by index: <code>edit-cap</code></a></h4>
 <div class="paragraph">
-<p>If you made a mistake in entering the information for any particular CAP entry, do not worry!
- <code>edit-cap</code> command can easily fix that.</p>
+<p>Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
+<p>If you made a mistake in entering the information for any particular CAP entry, do not worry!
+ <code>edit-cap</code> command can easily fix that.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -324,63 +394,48 @@ This of course includes the module list, semester list and your CAP score!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-cap-entry-by-module-code-code-edit-cap-mc-code"><a class="link" href="#editing-a-cap-entry-by-module-code-code-edit-cap-mc-code">Editing a CAP Entry by module code: <code>edit-cap-mc</code></a></h4>
+<h4 id="filtering-a-cap-entry-code-find-sem-code"><a class="link" href="#filtering-a-cap-entry-code-find-sem-code">Filtering a CAP entry: <code>find-sem</code></a></h4>
 <div class="paragraph">
-<p>UltiStudent understands the large amount of modules students have to take as such, to bring more convenience, CAP Manager
-now allows you to edit the parameters of any modules through their module code instead of the index number
-for more convenience!</p>
+<p>Format: <code>find-sem MODULESEMESTER &#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
-<p>The format for the <code>edit-cap-mc</code> command is <code>edit-cap-mc MODULECODE [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
+<p>Here at UltiStudent, we understand that students have many modules and it can become difficult to find and filter
+through the many modules that they take. To help you with this, the <code>find-sem</code> will be handy!</p>
 </div>
 <div class="paragraph">
-<p>Just like the <code>edit-cap</code> command, <code>edit-cap-mc</code> has the same</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-cap-entry-code-delete-cap-code"><a class="link" href="#deleting-a-cap-entry-code-delete-cap-code">Deleting a CAP entry: <code>delete-cap</code></a></h4>
-<div class="paragraph">
-<p>If you ever do need to delete a module in the CAP Manager, you may use this command to easily delete
-that module.
-The format for this command is that of <code>delete-cap INDEX</code>.</p>
-</div>
-<div class="paragraph">
-<p>Examples:
-For example, if you would like to delete the module ST2334 from CAP Manager, simply look for its index number. and apply it to the format!
-In this case, we would enter:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete-cap 14</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Before deleting:
-image::EditedCapManager.png[width="790"]</p>
-</div>
-<div class="paragraph">
-<p>After entering the delete command:</p>
+<p>Let&#8217;s say you would like to view all the modules that you took in Year 1 Semester 2.
+Simply type <code>find-sem Y1S2</code> into the Command Box and the module list will be updated rightaway to show the modules ou took in the
+semester you entered!</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/DeletedCapManager.png" alt="DeletedCapManager" width="790">
+<img src="../images/FindCapManager.png" alt="FindCapManager" width="790">
 </div>
 </div>
-<div class="paragraph">
-<p>And just like that the module is deleted! Once again, your CAP will be updated rightaway in the CAP Indicator!</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title=":bulb:"></i>
+</td>
+<td class="content">
+Psst..! You can use the find-sem command to view more than 1 semester of modules if you wish!
+</td>
+</tr>
+</table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="filtering-a-cap-entry-code-list-cap-code"><a class="link" href="#filtering-a-cap-entry-code-list-cap-code">Filtering a CAP entry: <code>list-cap</code></a></h4>
-<div class="paragraph">
-<p>In the previous sub-section, we saw how using the <code>find-sem</code> can help us to filter through the entire CAP Manager and only
-see the modules of the semesters we are interested in. Now let&#8217;s see how we can view all of our modules again!</p>
-</div>
-<div class="paragraph">
-<p>The <code>list-cap</code> command will help you to view your full list of modules in the CAP Manager.
-All you have to do is enter <code>list-cap</code> into the command box and TADAH! You will see all the modules you have taken.</p>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Do be careful and know that your CAP reflected in CAP indicator is still for that of all your modules.
+CAP indicator does not calculate your CAP score for only the displayed modules!
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -530,15 +585,7 @@ the cap entry&#8217;s index with the <code>edit-cap</code> command or the cap en
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/DeleteCapEntryActivityDiagram.png" alt="DeleteCapEntryActivityDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The sequence diagram for the "Update Module Semester" reference frame above can be seen below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/EditCapManagerSequenceDiagram2.png" alt="EditCapManagerSequenceDiagram2" width="800">
+<img src="../images/DeleteCapManagerActivityDiagram.png" alt="DeleteCapManagerActivityDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -630,4 +677,4 @@ moduleSemester of <code>Y2S2</code>.</p>
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 09:06:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 11:43:36 UTC</div></div></div></body></html>
