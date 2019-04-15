@@ -1,25 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Ng Wei Xin - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">UltiStudent</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/cs2103-ay1819s2-w09-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Ng Wei Xin - Project Portfolio</h1><div id="toc" class="toc"><div id="toctitle">Table of Contents</div><ul class="sectlevel1">
-<li><a href="#project-ultistudent">1. PROJECT: UltiStudent</a>
-<ul class="sectlevel2">
-<li><a href="#overview">1.1. Overview</a></li>
-</ul>
-</li>
-<li><a href="#summary-of-contributions">2. Summary of contributions</a></li>
-<li><a href="#contributions-to-the-user-guide">3. Contributions to the User Guide</a>
-<ul class="sectlevel3">
-<li><a href="#adding-a-homework-code-add-hw-code">3.1. Adding a homework: <code>add-hw</code></a></li>
-<li><a href="#editing-and-saving-a-note-code-edit-note-code-code-save-note-code">3.2. Editing and Saving a note : <code>edit-note</code> <code>save-note</code></a></li>
-</ul>
-</li>
-<li><a href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a>
-<ul class="sectlevel2">
-<li><a href="#adding-a-homework-code-add-hw-code-2">4.1. Adding a homework: <code>add-hw</code></a></li>
-<li><a href="#editing-and-saving-a-note-code-edit-note-code-code-save-note-code-2">4.2. Editing and Saving a note : <code>edit-note</code> <code>save-note</code></a></li>
-</ul>
-</li>
-</ul></div></div><div id="content"><div class="sect1">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="content"><div class="sect1">
 <h2 id="project-ultistudent"><a class="link" href="#project-ultistudent">1. PROJECT: UltiStudent</a></h2>
 <div class="sectionbody">
 <hr>
@@ -401,10 +382,8 @@ Changes must be made manually.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">_The add homework feature is a core feature to the Homework Manager of UltiStudent. Which allows the users to create</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a homework object in UltiStudent._</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>The add homework feature is a core feature to the Homework Manager of
+ UltiStudent. Which allows the users to create a homework object in UltiStudent.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -424,7 +403,8 @@ construct individual objects that construct a <code>Homework</code> object.</p>
 <p><code>AddHomeworkCommandParser#parse()</code> - This operation will take in a <code>String</code> input from the
 user that will create individual objects based on the prefixes 'mc/', 'hw/' and 'd/'. The <code>String</code>
 value after the individual prefixes will create the respective object: 'mc/' for <code>ModuleCode</code>,
-'hw/' for <code>HomeworkName</code> and 'd/' for <code>Date</code>. A validation check will be impose upon the creation
+'hw/' for <code>HomeworkName</code> and 'd/' for <code>Date</code>. A validation check will be
+imposed upon the creation
 of each object. Any checks that fails the validation would prompt the user on the failed component.
 For example:</p>
 <div class="ulist">
@@ -456,10 +436,11 @@ the parameter</p>
 <div class="paragraph">
 <p>Take a look at the code snippet of AddHomeworkCommandParser below for an illustration:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="../images/AddHomeworkCommandParser%20snippet.png" alt="AddHomeworkCommandParser snippet" width="800">
 </div>
+<div class="title">Figure 1. (Figure description)</div>
 </div>
 </div>
 <div class="sect3">
@@ -484,7 +465,8 @@ as a parameter.</p>
 and returning a <code>AddHomeworkCommand</code> object with <code>Homework</code> as the parameter.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 5</strong>: <code>LogicManager</code> would use <code>AddHomeCommand#execute()</code> to add the <code>ModuleCode</code> and <code>Homework</code>
+<p><strong>Step 5</strong>: <code>LogicManager</code> would use <code>AddHomeWorkCommand#execute()</code> to add the
+<code>ModuleCode</code> and <code>Homework</code>
 into the <code>Model</code> which is handled by <code>ModelManager</code></p>
 </div>
 <div class="paragraph">
@@ -495,10 +477,11 @@ be return back to the user.</p>
 <p>The image below illustrates the scenario of when the user executes <code>add-hw mc/CS1101S hw/Tutorial 1
 d/01/05/2019</code>:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="../images/AddHomeworkSequentialDiagram.png" alt="AddHomeworkSequentialDiagram" width="800">
 </div>
+<div class="title">Figure 2. (Figure description)</div>
 </div>
 </div>
 </div>
@@ -507,4 +490,4 @@ d/01/05/2019</code>:</p>
 
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 11:49:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 12:38:51 UTC</div></div></div></body></html>
