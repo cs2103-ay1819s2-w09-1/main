@@ -10,33 +10,13 @@
 <li><a href="#deleting-a-homework-code-delete-hw-code">4.2. Deleting a homework: <code>delete-hw</code></a></li>
 <li><a href="#finding-homework-from-a-specified-module-code-find-mod-code">4.3. Finding homework from a specified module: <code>find-mod</code></a></li>
 <li><a href="#reverting-back-to-a-full-list-view-code-list-hw-code">4.4. Reverting back to a full list view: <code>list-hw</code></a></li>
-<li><a href="#notes-manager">4.5. Notes Manager</a></li>
-<li><a href="#cap-manager">4.6. CAP Manager</a></li>
 </ul>
 </li>
-<li><a href="#faq">5. FAQ</a></li>
-<li><a href="#command-summary">6. Command Summary</a>
+<li><a href="#contributions-to-the-developer-guide">5. Contributions to the Developer Guide</a>
 <ul class="sectlevel2">
-<li><a href="#general">6.1. General</a></li>
-<li><a href="#homework-manager">6.2. Homework Manager</a></li>
-<li><a href="#notes-manager-2">6.3. Notes Manager</a></li>
-<li><a href="#cap-manager-2">6.4. Cap Manager</a></li>
-<li><a href="#notes-manager-3">6.5. Notes Manager</a></li>
-<li><a href="#cap-manager-3">6.6. CAP Manager</a></li>
-</ul>
-</li>
-<li><a href="#faq-2">7. FAQ</a></li>
-<li><a href="#command-summary-2">8. Command Summary</a>
-<ul class="sectlevel2">
-<li><a href="#general-2">8.1. General</a></li>
-<li><a href="#homework-manager-2">8.2. Homework Manager</a></li>
-<li><a href="#notes-manager-4">8.3. Notes Manager</a></li>
-<li><a href="#cap-manager-4">8.4. Cap Manager</a></li>
-</ul>
-</li>
-<li><a href="#contributions-to-the-developer-guide">9. Contributions to the Developer Guide</a>
-<ul class="sectlevel2">
-<li><a href="#delete-homework-feature">9.1. Delete homework feature</a></li>
+<li><a href="#delete-homework-feature">5.1. Delete homework feature</a></li>
+<li><a href="#edit-homework-feature">5.2. Edit homework feature</a></li>
+<li><a href="#find-module-feature">5.3. Find module feature</a></li>
 </ul>
 </li>
 </ul></div></div><div id="content"><div id="preamble">
@@ -321,1227 +301,10 @@ homework entries from selected module codes. Now, you are probably wondering now
 and that makes this simple and easy to use!</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="notes-manager"><a class="link" href="#notes-manager">4.5. Notes Manager</a></h3>
-<div class="sect3">
-<h4 id="adding-a-note-code-add-note-code"><a class="link" href="#adding-a-note-code-add-note-code">4.5.1. Adding a note : <code>add-note</code></a></h4>
-<div class="paragraph">
-<p>Imagine yourself sitting in CS2103T Week 7 lecture, and the Professor have just
-covered an important concept which you would like to take some notes on. Let
-Notes Manager handle that for you by storing your notes digitally for you!</p>
-</div>
-<div class="paragraph">
-<p>To use this command we have to follow this format: <code>add-note mc/MODULECODE
-n/NOTENAME</code></p>
-</div>
-<div class="paragraph">
-<p>First, we will need to be in the Note Manager. To open Notes Manager,
-enter <code>open Notes Manager</code> into the Command Box (red). You will see the
-Result Box (green) prompting that the Notes Mananger is opened.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_notes_manager.png" alt="UI notes manager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>In this case, we need to add a new note. We will need to enter the following
-command into the Command Box: <code>add-note mc/CS2103T n/Week 7 Lecture</code>.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_add_notes.png" alt="UI add notes" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>The new note will be added to the bottom of the list.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Notes Manager can only accept alphanumeric characters (A-Z, a-z, 0-9), and
-note names cannot begin with a whitespace.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-and-saving-a-note-code-edit-note-code-code-save-note-code"><a class="link" href="#editing-and-saving-a-note-code-edit-note-code-code-save-note-code">4.5.2. Editing and Saving a note : <code>edit-note</code> <code>save-note</code></a></h4>
-<div class="sect4">
-<h5 id="editing-note-code-edit-note-code"><a class="link" href="#editing-note-code-edit-note-code">Editing note: <code>edit-note</code></a></h5>
-<div class="paragraph">
-<p>Hurray! We&#8217;ve successfully added a note therefore it is time for us to learn how to edit and save the edited notes!
-But first! we got to make sure we are in the Notes Manager by looking at the Notes icon in the Navigation Box (white
-highlighted box) as shown below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/Edit&Save-Note%20UG.png" alt="Edit&amp;Save Note UG" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Now that we are in the Notes Manager. It is time for us to start editing our note! First off, we have to use
-<code>edit-note INDEX</code> to select the notes that we want to edit.</p>
-</div>
-<div class="paragraph">
-<p>For example, we have 2 notes currently as shown in the image above, and we would like to edit our Personal
-Project Portfolio note. We will use <code>edit-note 1</code> in the Command Box (red highlighted box) to open <strong>Personal
-Project Portfolio</strong> note for editing.</p>
-</div>
-<div class="paragraph">
-<p>When Notes Manager has successfully open our note, it will display <code>Opened note: 1</code> in the Result box (green
-highlighted box). At the same time, the note will be highlighted in blue in the Notes List (blue highlighted box)
-and the Text Field (orange highlighted box) will be activated and turn white, allowing us to start jotting down
-our notes!</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="saving-note-code-save-note-code"><a class="link" href="#saving-note-code-save-note-code">Saving note: <code>save-note</code></a></h5>
-<div class="paragraph">
-<p>Now that we are done editing our note, it is time to save them! We can do this easily by using the <code>save-note</code> in
-the Command Box (red highlighted box)!</p>
-</div>
-<div class="paragraph">
-<p>Once the note is saved, Notes Manager will let us know by displaying <code>Saved note,  Module: CS2103T Note: Personal
-Project Portfolio Content: &#8230;&#8203;(notes that we wrote)</code> in the Result Box (green highlighted box). At the same time,
-the Text Field (orange highlighted box) will be disabled and turn grey.</p>
-</div>
-<div class="paragraph">
-<p>For <code>save-note</code> there is no parameters as it will save all edited notes in notes manager.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Pro tip here! We can edit multiple notes at the same time by using edit-note 1 then edit-note 2 to open the
-respective notes to edit. Once we are done editing, we can simply use <code>save-note</code> to save all the edited notes!
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-For data integrity, undo and redo commands are not supported on editing and saving notes.
-Changes must be made manually.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-note-code-delete-note-code"><a class="link" href="#deleting-a-note-code-delete-note-code">4.5.3. Deleting a Note: <code>delete-note</code></a></h4>
-<div class="paragraph">
-<p>As the semester comes to an end, we would like to clean up the notes by
-removing some of the notes which we no longer need. Here&#8217;s where
-<code>delete-note</code> comes in handy!</p>
-</div>
-<div class="paragraph">
-<p>To use this command we have to follow this format: <code>delete-note INDEX</code>. This
-will delete the note at the specified index. The index <strong>must be a positive
-integer</strong> (1, 2, 3,&#8230;&#8203;) and it must refer to an existing index number shown in
- the displayed Notes List.</p>
-</div>
-<div class="paragraph">
-<p>Say, we would like to delete the note we added from CS2103T Week 7 Lecture.
-It has an index of <code>12</code> in the list.</p>
-</div>
-<div class="paragraph">
-<p>As such, we will need to enter the following command: <code>delete-note 12</code>.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_delete_notes.png" alt="UI delete notes" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Viola! The note is deleted.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="finding-note-from-a-specified-word-code-find-note-code"><a class="link" href="#finding-note-from-a-specified-word-code-find-note-code">4.5.4. Finding note from a specified word: <code>find-note</code></a></h4>
-<div class="paragraph">
-<p>As the semester progresses, there will be more notes taken for various module
- activities (lectures, tutorials, labs). Wouldn&#8217;t it be easier if we can
- search for our notes based on a keyword? With <code>find-note</code>, we will be able to
-  find our notes easily with the usage of keywords!</p>
-</div>
-<div class="paragraph">
-<p>The format of this command: <code>find-note [KEYWORDS]</code>.</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s say you are looking for a tutorial note. We will enter <code>find-note
-tutorial</code> in the Command Box (red). The resulting list will be displayed in
-the Notes List (light blue box).</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_find_notes.png" alt="UI find notes" width="790">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You are not restricted to only one keyword for the <code>[KEYWORDS]</code> in the command.
-You can add more of them if you wish.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>In v2.0, we will be able to search for notes by its module code and note name.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="reverting-back-to-a-full-list-view-code-list-note-code"><a class="link" href="#reverting-back-to-a-full-list-view-code-list-note-code">4.5.5. Reverting back to a full list view: <code>list-note</code></a></h4>
-<div class="paragraph">
-<p>In the previous sub-section, we looked at how we can use the command <code>find-note</code>
- to display notes from selected keywords. Now, you are
- probably wondering now how to display a full list of modules.</p>
-</div>
-<div class="paragraph">
-<p>To display the full list, simply use this command <code>list-note</code>. This command has
-no additional inputs for you to type and that makes this simple and easy to use!</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cap-manager"><a class="link" href="#cap-manager">4.6. CAP Manager</a></h3>
-<div class="paragraph">
-<p>Climbing to your first class honours? Or struggling to keep within your desired class? Worry no more, let CAP Manager
-help you with keeping count. All you need to do is to key in your grades and TADAH your CAP will be calculated for you.
-CAP Manager&#8217;s interface is split into a few key sections. Do refer to the image below to familiarise yourself with
-Cap Manager!</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/CapManagerInterface.png" alt="CapManagerInterface" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Now that you&#8217;re all set, let&#8217;s see how Cap Manager can help us!</p>
-</div>
-<div class="sect3">
-<h4 id="adding-a-cap-entry-code-add-cap-code"><a class="link" href="#adding-a-cap-entry-code-add-cap-code">4.6.1. Adding a CAP entry: <code>add-cap</code></a></h4>
-<div class="paragraph">
-<p>Adds a new Module to the CAP Manager<br></p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s assume it&#8217;s the end of the semester and you just got your grades back.
-Simply add your modules to the Cap Manager with the <code>add-cap</code> command to view your updated CAP!</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS sem/MODULESEMESTER</code></p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Input type</th>
-<th class="tableblock halign-left valign-top">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mc/MODULECODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Module Code of the Module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mc/CS2103T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">g/MODULEGRADE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Module Grade received</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">g/A</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mcs/MODULECREDITS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Modular Credits the module is worth</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mcs/4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sem/MODULESEMESTER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Semester the module was taken in</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sem/Y1S1</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s assume you would like to add the module, CS2101 into the CAP Manager.
-Given that you got B+, and that CS2101 is worth 4 Modular credits and you took the module in Year 2 Semester 2, the
-command to input to the Command Box would be:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add-cap mc/CS2101 g/B+ mcs/4 sem/Y2S2</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Before adding</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/OpenCapManager.png" alt="OpenCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>After entering <code>add-cap mc/CS2101 g/B+ mcs/4 sem/Y2S2</code> into the command box.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AddCapManager.png" alt="AddCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>And just like that your CAP Manager will now include the module you just added!
-Your CAP score will also be updated right away!
-In addition, the semester list will also be updated if you are adding a module that is newly taken.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Unfortunately, UltiStudent&#8217;s CAP Manager does not allows U or S grade as of this version.
-Do look out for our next update, where we add the SU Command!
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-cap-entry-by-index-code-edit-cap-code"><a class="link" href="#editing-a-cap-entry-by-index-code-edit-cap-code">4.6.2. Editing a CAP Entry by index: <code>edit-cap</code></a></h4>
-<div class="paragraph">
-<p>If you made a mistake in entering the information for any particular CAP entry, do not worry!
- <code>edit-cap</code> command can easily fix that.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Index refers to the index number shown in the displayed CAP Entries list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>Edits the CAP entry at the specified <code>INDEX</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s assume you had actually gotten A+ for the module CS2101 and you took the module in Y3S1 instead.</p>
-</div>
-<div class="paragraph">
-<p>Given this scenario, the command to input to the Command Box would be:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit-cap 15 g/A sem/y3s1</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s put it to use!</p>
-</div>
-<div class="paragraph">
-<p>Before editing:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AddCapManager.png" alt="AddCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>After editing:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/EditedCapManager.png" alt="EditedCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>With that, all changes you have made will be reflected straightaway in the CAP manager.
-This of course includes the module list, semester list and your CAP score!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-cap-entry-by-module-code-code-edit-cap-mc-code"><a class="link" href="#editing-a-cap-entry-by-module-code-code-edit-cap-mc-code">4.6.3. Editing a CAP Entry by module code: <code>edit-cap-mc</code></a></h4>
-<div class="paragraph">
-<p>UltiStudent understands the large amount of modules students have to take as such, to bring more convenience, CAP Manager
-now allows you to edit the parameters of any modules through their module code instead of the index number
-for more convenience!</p>
-</div>
-<div class="paragraph">
-<p>The format for the <code>edit-cap-mc</code> command is <code>edit-cap-mc MODULECODE [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
-</div>
-<div class="paragraph">
-<p>Just like the <code>edit-cap</code> command, <code>edit-cap-mc</code> has the same</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-cap-entry-code-delete-cap-code"><a class="link" href="#deleting-a-cap-entry-code-delete-cap-code">4.6.4. Deleting a CAP entry: <code>delete-cap</code></a></h4>
-<div class="paragraph">
-<p>If you ever do need to delete a module in the CAP Manager, you may use this command to easily delete
-that module.
-The format for this command is that of <code>delete-cap INDEX</code>.</p>
-</div>
-<div class="paragraph">
-<p>Examples:
-For example, if you would like to delete the module ST2334 from CAP Manager, simply look for its index number. and apply it to the format!
-In this case, we would enter:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete-cap 14</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Before deleting:
-image::EditedCapManager.png[width="790"]</p>
-</div>
-<div class="paragraph">
-<p>After entering the delete command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DeletedCapManager.png" alt="DeletedCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>And just like that the module is deleted! Once again, your CAP will be updated rightaway in the CAP Indicator!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="filtering-a-cap-entry-code-find-sem-code"><a class="link" href="#filtering-a-cap-entry-code-find-sem-code">4.6.5. Filtering a CAP entry: <code>find-sem</code></a></h4>
-<div class="paragraph">
-<p>Here at UltiStudent, we understand that students have many modules and it can become difficult to find and filter
-through the many modules that they take. To help you with this, the <code>find-sem</code> will be handy!</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>find-sem MODULESEMESTER &#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s say you would like to view all the modules that you took in Year 1 Semester 2.
-Simply type <code>find-sem Y1S2</code> into the Command Box and the module list will be updated rightaway to show the modules ou took in the
-semester you entered!</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/FindCapManager.png" alt="FindCapManager" width="790">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Psst..! You can use the find-sem command to view more than 1 semester of modules if you wish!
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Do be careful and know that your CAP reflected in CAP indicator is still for that of all your modules.
-CAP indicator does not calculate your CAP score for only the displayed modules!
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="filtering-a-cap-entry-code-list-cap-code"><a class="link" href="#filtering-a-cap-entry-code-list-cap-code">4.6.6. Filtering a CAP entry: <code>list-cap</code></a></h4>
-<div class="paragraph">
-<p>In the previous sub-section, we saw how using the <code>find-sem</code> can help us to filter through the entire CAP Manager and only
-see the modules of the semesters we are interested in. Now let&#8217;s see how we can view all of our modules again!</p>
-</div>
-<div class="paragraph">
-<p>The <code>list-cap</code> command will help you to view your full list of modules in the CAP Manager.
-All you have to do is enter <code>list-cap</code> into the command box and TADAH! You will see all the modules you have taken.</p>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous UltiStudent folder.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="general"><a class="link" href="#general">6.1. General</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Open</strong> : <code>open MANAGER</code><br>
-e.g. <code>open HomeworkManager</code>, <code>open NotesManager</code>, <code>open CapManager</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find Tutorial 3</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 3</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="homework-manager"><a class="link" href="#homework-manager">6.2. Homework Manager</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add Homework</strong> : <code>add-hw mc/MODULECODE hw/HOMEWORK d/DEADLINE</code><br>
-e.g. <code>add-hw mc/CS1101S hw/Tutorial 1 d/01/05/2019</code></p>
-</li>
-<li>
-<p><strong>Delete Homework</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 2</code></p>
-</li>
-<li>
-<p><strong>Edit Homework</strong> : <code>edit-note INDEX  [mc/MODULECODE] [hw/HOMEWORK] [d/DEADLINE] [p/PRIORITY]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 d/030319 p/</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="notes-manager-2"><a class="link" href="#notes-manager-2">6.3. Notes Manager</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add Note</strong> : <code>add-note mc/MODULECODE n/NOTENAME hw/HOMEWORK [p/PRIORITY]&#8230;&#8203;</code><br>
-e.g. <code>add-note mc/CS2103T n/Lecture  3</code></p>
-</li>
-<li>
-<p><strong>Delete Note</strong> : <code>delete-note INDEX</code><br>
-e.g. <code>delete 2</code></p>
-</li>
-<li>
-<p><strong>Editing Note to Edit</strong> : <code>edit-note INDEX</code><br>
-e.g. <code>edit-note 1</code></p>
-</li>
-<li>
-<p><strong>Saving an Edited Note</strong> : <code>save-note</code><br>
-e.g. <code>save-note</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cap-manager-2"><a class="link" href="#cap-manager-2">6.4. Cap Manager</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add Cap Entry</strong> <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS sem/MODULESEMESTER</code><br>
-e.g. `add-cap mc/CS2101 g/A- mcs/4 sem/Y2S2 `</p>
-</li>
-<li>
-<p><strong>Delete Cap Entry</strong> : <code>delete-cap INDEX</code><br>
-e.g. <code>delete-cap 1</code></p>
-</li>
-<li>
-<p><strong>Edit Cap Entry by Index</strong> : <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code><br>
-e.g. <code>edit-cap 2 g/B+ mcs/4</code></p>
-</li>
-<li>
-<p><strong>Edit Cap Entry by Code</strong> : <code>edit-cap MODULECODE  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code><br>
-e.g. <code>edit-cap-mc CS3203 g/A- mcs/8</code></p>
-</li>
-<li>
-<p><strong>Find Cap Entry by Semester</strong> : <code>find-sem MODULESEMESTER</code><br>
-e.g. <code>find-sem Y2S2 Y3S1</code></p>
-</li>
-<li>
-<p><strong>List all Modules in the CAP Manager</strong> : <code>list-cap</code><br>
-e.g. <code>list-cap</code>
-==== Reverting back to a full list view: <code>list-hw</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In the previous sub-section, we looked at how we can use the command <code>find-mod</code> to display
-homework entries from selected module codes. Now, you are probably wondering now how to display a full list of modules.</p>
-</div>
-<div class="paragraph">
-<p>To display the full list, simply use this command <code>list-hw</code>. This command has no additional inputs for you to type
-and that makes this simple and easy to use!</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="notes-manager-3"><a class="link" href="#notes-manager-3">6.5. Notes Manager</a></h3>
-<div class="sect3">
-<h4 id="adding-a-note-code-add-note-code-2"><a class="link" href="#adding-a-note-code-add-note-code-2">6.5.1. Adding a note : <code>add-note</code></a></h4>
-<div class="paragraph">
-<p>Imagine yourself sitting in CS2103T Week 7 lecture, and the Professor have just
-covered an important concept which you would like to take some notes on. Let
-Notes Manager handle that for you by storing your notes digitally for you!</p>
-</div>
-<div class="paragraph">
-<p>To use this command we have to follow this format: <code>add-note mc/MODULECODE
-n/NOTENAME</code></p>
-</div>
-<div class="paragraph">
-<p>First, we will need to be in the Note Manager. To open Notes Manager,
-enter <code>open Notes Manager</code> into the Command Box (red). You will see the
-Result Box (green) prompting that the Notes Mananger is opened.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_notes_manager.png" alt="UI notes manager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>In this case, we need to add a new note. We will need to enter the following
-command into the Command Box: <code>add-note mc/CS2103T n/Week 7 Lecture</code>.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_add_notes.png" alt="UI add notes" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>The new note will be added to the bottom of the list.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Notes Manager can only accept alphanumeric characters (A-Z, a-z, 0-9), and
-note names cannot begin with a whitespace.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-and-saving-a-note-code-edit-note-code-code-save-note-code-2"><a class="link" href="#editing-and-saving-a-note-code-edit-note-code-code-save-note-code-2">6.5.2. Editing and Saving a note : <code>edit-note</code> <code>save-note</code></a></h4>
-<div class="sect4">
-<h5 id="editing-note-code-edit-note-code-2"><a class="link" href="#editing-note-code-edit-note-code-2">Editing note: <code>edit-note</code></a></h5>
-<div class="paragraph">
-<p>Hurray! We&#8217;ve successfully added a note therefore it is time for us to learn how to edit and save the edited notes!
-But first! we got to make sure we are in the Notes Manager by looking at the Notes icon in the Navigation Box (white
-highlighted box) as shown below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/Edit&Save-Note%20UG.png" alt="Edit&amp;Save Note UG" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Now that we are in the Notes Manager. It is time for us to start editing our note! First off, we have to use
-<code>edit-note INDEX</code> to select the notes that we want to edit.</p>
-</div>
-<div class="paragraph">
-<p>For example, we have 2 notes currently as shown in the image above, and we would like to edit our Personal
-Project Portfolio note. We will use <code>edit-note 1</code> in the Command Box (red highlighted box) to open <strong>Personal
-Project Portfolio</strong> note for editing.</p>
-</div>
-<div class="paragraph">
-<p>When Notes Manager has successfully open our note, it will display <code>Opened note: 1</code> in the Result box (green
-highlighted box). At the same time, the note will be highlighted in blue in the Notes List (blue highlighted box)
-and the Text Field (orange highlighted box) will be activated and turn white, allowing us to start jotting down
-our notes!</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="saving-note-code-save-note-code-2"><a class="link" href="#saving-note-code-save-note-code-2">Saving note: <code>save-note</code></a></h5>
-<div class="paragraph">
-<p>Now that we are done editing our note, it is time to save them! We can do this easily by using the <code>save-note</code> in
-the Command Box (red highlighted box)!</p>
-</div>
-<div class="paragraph">
-<p>Once the note is saved, Notes Manager will let us know by displaying <code>Saved note,  Module: CS2103T Note: Personal
-Project Portfolio Content: &#8230;&#8203;(notes that we wrote)</code> in the Result Box (green highlighted box). At the same time,
-the Text Field (orange highlighted box) will be disabled and turn grey.</p>
-</div>
-<div class="paragraph">
-<p>For <code>save-note</code> there is no parameters as it will save all edited notes in notes manager.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Pro tip here! We can edit multiple notes at the same time by using edit-note 1 then edit-note 2 to open the
-respective notes to edit. Once we are done editing, we can simply use <code>save-note</code> to save all the edited notes!
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-For data integrity, undo and redo commands are not supported on editing and saving notes.
-Changes must be made manually.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-note-code-delete-note-code-2"><a class="link" href="#deleting-a-note-code-delete-note-code-2">6.5.3. Deleting a Note: <code>delete-note</code></a></h4>
-<div class="paragraph">
-<p>As the semester comes to an end, we would like to clean up the notes by
-removing some of the notes which we no longer need. Here&#8217;s where
-<code>delete-note</code> comes in handy!</p>
-</div>
-<div class="paragraph">
-<p>To use this command we have to follow this format: <code>delete-note INDEX</code>. This
-will delete the note at the specified index. The index <strong>must be a positive
-integer</strong> (1, 2, 3,&#8230;&#8203;) and it must refer to an existing index number shown in
- the displayed Notes List.</p>
-</div>
-<div class="paragraph">
-<p>Say, we would like to delete the note we added from CS2103T Week 7 Lecture.
-It has an index of <code>12</code> in the list.</p>
-</div>
-<div class="paragraph">
-<p>As such, we will need to enter the following command: <code>delete-note 12</code>.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_delete_notes.png" alt="UI delete notes" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Viola! The note is deleted.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="finding-note-from-a-specified-word-code-find-note-code-2"><a class="link" href="#finding-note-from-a-specified-word-code-find-note-code-2">6.5.4. Finding note from a specified word: <code>find-note</code></a></h4>
-<div class="paragraph">
-<p>As the semester progresses, there will be more notes taken for various module
- activities (lectures, tutorials, labs). Wouldn&#8217;t it be easier if we can
- search for our notes based on a keyword? With <code>find-note</code>, we will be able to
-  find our notes easily with the usage of keywords!</p>
-</div>
-<div class="paragraph">
-<p>The format of this command: <code>find-note [KEYWORDS]</code>.</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s say you are looking for a tutorial note. We will enter <code>find-note
-tutorial</code> in the Command Box (red). The resulting list will be displayed in
-the Notes List (light blue box).</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/UI_find_notes.png" alt="UI find notes" width="790">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You are not restricted to only one keyword for the <code>[KEYWORDS]</code> in the command.
-You can add more of them if you wish.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>In v2.0, we will be able to search for notes by its module code and note name.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="reverting-back-to-a-full-list-view-code-list-note-code-2"><a class="link" href="#reverting-back-to-a-full-list-view-code-list-note-code-2">6.5.5. Reverting back to a full list view: <code>list-note</code></a></h4>
-<div class="paragraph">
-<p>In the previous sub-section, we looked at how we can use the command <code>find-note</code>
- to display notes from selected keywords. Now, you are
- probably wondering now how to display a full list of modules.</p>
-</div>
-<div class="paragraph">
-<p>To display the full list, simply use this command <code>list-note</code>. This command has
-no additional inputs for you to type and that makes this simple and easy to use!</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cap-manager-3"><a class="link" href="#cap-manager-3">6.6. CAP Manager</a></h3>
-<div class="paragraph">
-<p>Climbing to your first class honours? Or struggling to keep within your desired class? Worry no more, let CAP Manager
-help you with keeping count. All you need to do is to key in your grades and TADAH your CAP will be calculated for you.
-CAP Manager&#8217;s interface is split into a few key sections. Do refer to the image below to familiarise yourself with
-Cap Manager!</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/CapManagerInterface.png" alt="CapManagerInterface" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Now that you&#8217;re all set, let&#8217;s see how Cap Manager can help us!</p>
-</div>
-<div class="sect3">
-<h4 id="adding-a-cap-entry-code-add-cap-code-2"><a class="link" href="#adding-a-cap-entry-code-add-cap-code-2">6.6.1. Adding a CAP entry: <code>add-cap</code></a></h4>
-<div class="paragraph">
-<p>Adds a new Module to the CAP Manager<br></p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s assume it&#8217;s the end of the semester and you just got your grades back.
-Simply add your modules to the Cap Manager with the <code>add-cap</code> command to view your updated CAP!</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS sem/MODULESEMESTER</code></p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Input type</th>
-<th class="tableblock halign-left valign-top">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mc/MODULECODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Module Code of the Module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mc/CS2103T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">g/MODULEGRADE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Module Grade received</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">g/A</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mcs/MODULECREDITS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Modular Credits the module is worth</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mcs/4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sem/MODULESEMESTER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Semester the module was taken in</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sem/Y1S1</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s assume you would like to add the module, CS2101 into the CAP Manager.
-Given that you got B+, and that CS2101 is worth 4 Modular credits and you took the module in Year 2 Semester 2, the
-command to input to the Command Box would be:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add-cap mc/CS2101 g/B+ mcs/4 sem/Y2S2</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Before adding</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/OpenCapManager.png" alt="OpenCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>After entering <code>add-cap mc/CS2101 g/B+ mcs/4 sem/Y2S2</code> into the command box.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AddCapManager.png" alt="AddCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>And just like that your CAP Manager will now include the module you just added!
-Your CAP score will also be updated right away!
-In addition, the semester list will also be updated if you are adding a module that is newly taken.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Unfortunately, UltiStudent&#8217;s CAP Manager does not allows U or S grade as of this version.
-Do look out for our next update, where we add the SU Command!
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-cap-entry-by-index-code-edit-cap-code-2"><a class="link" href="#editing-a-cap-entry-by-index-code-edit-cap-code-2">6.6.2. Editing a CAP Entry by index: <code>edit-cap</code></a></h4>
-<div class="paragraph">
-<p>If you made a mistake in entering the information for any particular CAP entry, do not worry!
- <code>edit-cap</code> command can easily fix that.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Index refers to the index number shown in the displayed CAP Entries list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>Edits the CAP entry at the specified <code>INDEX</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s assume you had actually gotten A+ for the module CS2101 and you took the module in Y3S1 instead.</p>
-</div>
-<div class="paragraph">
-<p>Given this scenario, the command to input to the Command Box would be:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit-cap 15 g/A sem/y3s1</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s put it to use!</p>
-</div>
-<div class="paragraph">
-<p>Before editing:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AddCapManager.png" alt="AddCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>After editing:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/EditedCapManager.png" alt="EditedCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>With that, all changes you have made will be reflected straightaway in the CAP manager.
-This of course includes the module list, semester list and your CAP score!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-a-cap-entry-by-module-code-code-edit-cap-mc-code-2"><a class="link" href="#editing-a-cap-entry-by-module-code-code-edit-cap-mc-code-2">6.6.3. Editing a CAP Entry by module code: <code>edit-cap-mc</code></a></h4>
-<div class="paragraph">
-<p>UltiStudent understands the large amount of modules students have to take as such, to bring more convenience, CAP Manager
-now allows you to edit the parameters of any modules through their module code instead of the index number
-for more convenience!</p>
-</div>
-<div class="paragraph">
-<p>The format for the <code>edit-cap-mc</code> command is <code>edit-cap-mc MODULECODE [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code></p>
-</div>
-<div class="paragraph">
-<p>Just like the <code>edit-cap</code> command, <code>edit-cap-mc</code> has the same</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-cap-entry-code-delete-cap-code-2"><a class="link" href="#deleting-a-cap-entry-code-delete-cap-code-2">6.6.4. Deleting a CAP entry: <code>delete-cap</code></a></h4>
-<div class="paragraph">
-<p>If you ever do need to delete a module in the CAP Manager, you may use this command to easily delete
-that module.
-The format for this command is that of <code>delete-cap INDEX</code>.</p>
-</div>
-<div class="paragraph">
-<p>Examples:
-For example, if you would like to delete the module ST2334 from CAP Manager, simply look for its index number. and apply it to the format!
-In this case, we would enter:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete-cap 14</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Before deleting:
-image::EditedCapManager.png[width="790"]</p>
-</div>
-<div class="paragraph">
-<p>After entering the delete command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DeletedCapManager.png" alt="DeletedCapManager" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>And just like that the module is deleted! Once again, your CAP will be updated rightaway in the CAP Indicator!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="filtering-a-cap-entry-code-find-sem-code-2"><a class="link" href="#filtering-a-cap-entry-code-find-sem-code-2">6.6.5. Filtering a CAP entry: <code>find-sem</code></a></h4>
-<div class="paragraph">
-<p>Here at UltiStudent, we understand that students have many modules and it can become difficult to find and filter
-through the many modules that they take. To help you with this, the <code>find-sem</code> will be handy!</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>find-sem MODULESEMESTER &#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s say you would like to view all the modules that you took in Year 1 Semester 2.
-Simply type <code>find-sem Y1S2</code> into the Command Box and the module list will be updated rightaway to show the modules ou took in the
-semester you entered!</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/FindCapManager.png" alt="FindCapManager" width="790">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Psst..! You can use the find-sem command to view more than 1 semester of modules if you wish!
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Do be careful and know that your CAP reflected in CAP indicator is still for that of all your modules.
-CAP indicator does not calculate your CAP score for only the displayed modules!
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="filtering-a-cap-entry-code-list-cap-code-2"><a class="link" href="#filtering-a-cap-entry-code-list-cap-code-2">6.6.6. Filtering a CAP entry: <code>list-cap</code></a></h4>
-<div class="paragraph">
-<p>In the previous sub-section, we saw how using the <code>find-sem</code> can help us to filter through the entire CAP Manager and only
-see the modules of the semesters we are interested in. Now let&#8217;s see how we can view all of our modules again!</p>
-</div>
-<div class="paragraph">
-<p>The <code>list-cap</code> command will help you to view your full list of modules in the CAP Manager.
-All you have to do is enter <code>list-cap</code> into the command box and TADAH! You will see all the modules you have taken.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faq-2"><a class="link" href="#faq-2">7. FAQ</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous UltiStudent folder.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="command-summary-2"><a class="link" href="#command-summary-2">8. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="general-2"><a class="link" href="#general-2">8.1. General</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Open</strong> : <code>open MANAGER</code><br>
-e.g. <code>open HomeworkManager</code>, <code>open NotesManager</code>, <code>open CapManager</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find Tutorial 3</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 3</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="homework-manager-2"><a class="link" href="#homework-manager-2">8.2. Homework Manager</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add Homework</strong> : <code>add-hw mc/MODULECODE hw/HOMEWORK d/DEADLINE</code><br>
-e.g. <code>add-hw mc/CS1101S hw/Tutorial 1 d/01/05/2019</code></p>
-</li>
-<li>
-<p><strong>Delete Homework</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 2</code></p>
-</li>
-<li>
-<p><strong>Edit Homework</strong> : <code>edit-note INDEX  [mc/MODULECODE] [hw/HOMEWORK] [d/DEADLINE] [p/PRIORITY]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 d/030319 p/</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="notes-manager-4"><a class="link" href="#notes-manager-4">8.3. Notes Manager</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add Note</strong> : <code>add-note mc/MODULECODE n/NOTENAME hw/HOMEWORK [p/PRIORITY]&#8230;&#8203;</code><br>
-e.g. <code>add-note mc/CS2103T n/Lecture  3</code></p>
-</li>
-<li>
-<p><strong>Delete Note</strong> : <code>delete-note INDEX</code><br>
-e.g. <code>delete 2</code></p>
-</li>
-<li>
-<p><strong>Editing Note to Edit</strong> : <code>edit-note INDEX</code><br>
-e.g. <code>edit-note 1</code></p>
-</li>
-<li>
-<p><strong>Saving an Edited Note</strong> : <code>save-note</code><br>
-e.g. <code>save-note</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cap-manager-4"><a class="link" href="#cap-manager-4">8.4. Cap Manager</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add Cap Entry</strong> <code>add-cap mc/MODULECODE g/MODULEGRADE mcs/MODULECREDITS sem/MODULESEMESTER</code><br>
-e.g. `add-cap mc/CS2101 g/A- mcs/4 sem/Y2S2 `</p>
-</li>
-<li>
-<p><strong>Delete Cap Entry</strong> : <code>delete-cap INDEX</code><br>
-e.g. <code>delete-cap 1</code></p>
-</li>
-<li>
-<p><strong>Edit Cap Entry by Index</strong> : <code>edit-cap INDEX  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code><br>
-e.g. <code>edit-cap 2 g/B+ mcs/4</code></p>
-</li>
-<li>
-<p><strong>Edit Cap Entry by Code</strong> : <code>edit-cap MODULECODE  [mc/MODULECODE] [g/MODULEGRADE] [mcs/MODULECREDITS] [sem/MODULESEMESTER]</code><br>
-e.g. <code>edit-cap-mc CS3203 g/A- mcs/8</code></p>
-</li>
-<li>
-<p><strong>Find Cap Entry by Semester</strong> : <code>find-sem MODULESEMESTER</code><br>
-e.g. <code>find-sem Y2S2 Y3S1</code></p>
-</li>
-<li>
-<p><strong>List all Modules in the CAP Manager</strong> : <code>list-cap</code><br>
-e.g. <code>list-cap</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">9. Contributions to the Developer Guide</a></h2>
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">5. Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1555,7 +318,7 @@ complicated technical information in a comprehensible manner. It also showcases 
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="delete-homework-feature"><a class="link" href="#delete-homework-feature">9.1. Delete homework feature</a></h3>
+<h3 id="delete-homework-feature"><a class="link" href="#delete-homework-feature">5.1. Delete homework feature</a></h3>
 <div class="paragraph">
 <p>This feature allows the user to delete a homework entry from the homework manager through its index.</p>
 </div>
@@ -1567,7 +330,7 @@ complicated technical information in a comprehensible manner. It also showcases 
 <a href="#Design-Model"><strong>model</strong></a> and the <a href="#Design-Storage"><strong>storage</strong></a> components of our application.</p>
 </div>
 <div class="sect3">
-<h4 id="overview-2"><a class="link" href="#overview-2">9.1.1. Overview</a></h4>
+<h4 id="overview-2"><a class="link" href="#overview-2">5.1.1. Overview</a></h4>
 <div class="paragraph">
 <p>The <code>DeleteHomeworkCommandParser</code> implements <code>Parser</code> with the following operation:</p>
 </div>
@@ -1582,7 +345,7 @@ Any invalid format of the command will be prompted by the command parser.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">9.1.2. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">5.1.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The delete homework feature is executed by the <code>DeleteHomeworkCommand</code>. Currently, the
 deletion of any homework entry is done based on the <code>INDEX</code> of the homework entry.</p>
@@ -1625,5 +388,170 @@ complexities involved when taking into account the different cases upon using de
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="edit-homework-feature"><a class="link" href="#edit-homework-feature">5.2. Edit homework feature</a></h3>
+<div class="paragraph">
+<p>This feature allows the user to edit any attribute of the homework entries. This is a core feature because the user
+may have to update deadline or make corrections to mistakes, such as typographical errors, when adding a homework entry.
+There are a total of three attributes for each entry, the module code, the homework name and the deadline.
+The user can edit at least one and up to three attributes.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 08:32:06 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p>The edit homework feature is facilitated by the <code>EditHomeworkCommandParser</code> and the <code>EditHomeworkCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>The edit command is part of the <a href="#Design-Logic"><strong>logic</strong></a> component of our application. It interacts with the
+<a href="#Design-Model"><strong>model</strong></a> component of our software architecture.</p>
+</div>
+<div class="sect3">
+<h4 id="overview-3"><a class="link" href="#overview-3">5.2.1. Overview</a></h4>
+<div class="paragraph">
+<p>The <code>EditHomeworkCommandParser</code> implements <code>Parser</code> with the following operation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EditHomeworkCommandParser#parse()</code> - This operation will take in an <code>int</code> input and one to three <code>String</code> input(s) from the
+user that will alter the attributes of current homework entries based on the prefixes 'mc/', 'hw/' and 'd/'.
+The <code>String</code> value after the individual prefixes will alter the respective attribute it corresponds to:
+'mc/' for <code>ModuleCode</code>,'hw/' for <code>HomeworkName</code> and 'd/' for <code>Date</code>. A validation check will be imposed upon editing
+of each object. Any checks that fails the validation would prompt the user on the failed component.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">5.2.2. Current Implementation</a></h4>
+<div class="paragraph">
+<p>Here is an example of a step-by-step process on how the edit command alters an attribute of the homework entry.
+For each step, you may follow the activity diagram at the end of this section to better understand the flow of events
+within UltiStudent when an <code>edit-hw</code> command is inputted.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application and opens the homework manager. There is a list of existing homework entries
+in the homework manager.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user then wishes to alter the homework deadline of the third entry in the homework list to 10 May 2019.
+He then types <code>edit-hw d/10/05/2019</code> into the Command Line Interface (CLI) and executes it.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The UltiStudentParser (refer to <a href="#Design-Logic"><strong>logic</strong></a>) then reads in these attributes that have been inputted
+and proceeds to alter the attributes of the homework entry in the given index. Each attribute will be validated.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The UltiStudentParser then creates a new EditHomeworkCommand based on the input of the user.
+When the EditHomeworkCommand is executed, it interacts with the Model architecture by calling the setHomework method.
+The setHomework method replaces the current homework entry with the a new homework entry
+containing all the desired attributes. The homework entry is now updated.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. If the module code for any homework entry has been edited to a module code that is not in the module code list,
+the EditHomeworkCommand will add the new module code into the module code list.
+The updated module code list will be displayed on our User Interface.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/edit%20hw%20activity%20diagram.png" alt="edit hw activity diagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>In designing the edit homework feature, we considered if we should use an alternative data structure to update the
+list of module codes. We considered using a hash map to map the module code to the number of homework with the modules
+to check if the module code list has to be updated for each edit.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Design Consideration</th>
+<th class="tableblock halign-left valign-top">Pros and Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update ModuleList by iteration (Current Choice)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros:</strong> Protects the abstraction layers and modularity
+by restricting the usage to the existing data structures already present in our code.</p>
+<p class="tableblock"><strong>Cons:</strong> Less efficient in terms of time and actual time taken can be long when number of entries is large.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update ModuleList using help from other data structures.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pros:</strong> Faster expected performance.</p>
+<p class="tableblock"><strong>Cons:</strong> Introducing a new data structure can disrupt the existing abstractions of our code.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>To sum up our justification of our choice of design, we decided to opt for the first option because we prioritised the
+existing design abstractions in our code over the efficiency of our code.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-module-feature"><a class="link" href="#find-module-feature">5.3. Find module feature</a></h3>
+<div class="paragraph">
+<p>This feature allows the user to only display homework belonging to one or more module codes which is user has specified.
+The find module feature is exceptionally useful to shorten the displayed list of homework.</p>
+</div>
+<div class="paragraph">
+<p>The find module feature is facilitated by the <code>FindModuleCommandParser</code> and the <code>FindModuleCommand</code>.
+It interacts with the <a href="#Design-Model"><strong>model</strong></a> component of our architecture to retrieve the list homework.</p>
+</div>
+<div class="sect3">
+<h4 id="overview-4"><a class="link" href="#overview-4">5.3.1. Overview</a></h4>
+<div class="paragraph">
+<p>The <code>FindModuleCommandParser</code> implements <code>Parser</code> with the following operation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FindModuleCommandParser#parse()</code> - This operation will take in at least one <code>String</code> input from the
+user and display any of the homework entries with matches any of list of <code>[KEYWORDS]</code> that the user has inputted.
+Each keyword is separated by a white space.
+Any homework entry that matches with the list of keywords will be displayed on the homework list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">5.3.2. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The find module feature is facilitated by the <code>FindModuleCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Here is a sequence of steps on how the find module feature works. We will use an example here to help you understand the
+flow of events. In the steps below, we will make references to the diagram at the end of the section to help
+you visualise the sequence of events better.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user first launches the application and enters the homework manager. There are already existing
+homework entries within the homework list.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. Currently, there are a total of twelve homework entries belonging to four modules.
+(Do note that this is an arbitrary state of the storage in the homework manager and is meant to serve as an example.)
+Now the user inputs <code>find mod CS1101S</code>. Referring to the diagram below, UltiStudentCommandParser
+parses the command <code>find-mod</code> together with the list of keywords.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The FindModuleParser then creates a FindModuleCommand and then returns it to the LogicManager,
+which are illustrated by the blue arrows pointing from the command parsers back to the LogicManger.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. Now, the Logic Manager then executes this command. When the find command is executed, it called the method
+updateFilteredList, which then returns a list of homework that has the module codes which matches any of the key words
+inputted back to the Logic Manager as indicated by the purple arrows pointing back to the Logic Manager&#8217;s blue block.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/find-mod%20sequence%20diagram.png" alt="find mod sequence diagram" width="800">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 09:01:20 UTC</div></div></div></body></html>
