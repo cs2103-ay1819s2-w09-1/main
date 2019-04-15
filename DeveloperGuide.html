@@ -1421,75 +1421,6 @@ The <code>UniqueCapEntryList</code> is then updated and the CAP score is updated
 the module semester will be deleted from the <code>UniqueModuleSemesterList</code>. Then the <code>UniqueModuleSemesterList</code> will be updated.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.9.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-to-store-the-cap-score-2"><a class="link" href="#aspect-how-to-store-the-cap-score-2">Aspect: How to store the Cap Score.</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Store the cap score as a static variable in CapEntry class.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons:</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Store the cap score as a separate class that is then store in UltiStudent.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-</li>
-<li>
-<p>Cons: Will use more memory and is harder to implement.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-how-to-calculate-score-of-module-grade"><a class="link" href="#aspect-how-to-calculate-score-of-module-grade">Aspect: How to calculate score of module grade.</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a Hash Map to get the Store the cap score as a static variable in CapEntry class.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Lower time complexity O(1) and cleaner code.</p>
-</li>
-<li>
-<p>Cons: Larger memory occupation.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use switch cases to find and allocate score to grade.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easier readability.</p>
-</li>
-<li>
-<p>Cons: Slower time complexity, worst case O(N).</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
@@ -2626,4 +2557,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:25:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:28:01 UTC</div></div></div></body></html>
